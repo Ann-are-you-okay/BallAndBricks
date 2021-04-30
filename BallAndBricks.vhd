@@ -32,8 +32,8 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL ballPosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
 	SIGNAL ballPosY : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
 
-	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
-	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
+	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "010";
+	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "011";
 	SIGNAL ballDirX : STD_LOGIC := '1';
 	SIGNAL ballDirY : STD_LOGIC := '1';
 	SIGNAL ballAttached : STD_LOGIC := '1';
@@ -41,7 +41,7 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL bricks2 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks3 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks4 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
-	SIGNAL bricks5 : STD_LOGIC_VECTOR(0 TO 8) := "110011111";
+	SIGNAL bricks5 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 
 	-- Constants for positions, sizes, etc
 	CONSTANT leftBound : INTEGER := 50;
@@ -294,6 +294,87 @@ BEGIN
 					ballDirY <= NOT ballDirY;
 					ballPosY <= ballPosY - ballDy;
 				END IF;
+
+				-- First row
+				FOR i IN 0 TO 8 LOOP
+					-- Collision on bottom of brick
+					IF (bricks1(i) = '1' AND (ballPosY <= 1 * (topBound+10) + brickHeight) AND (ballPosY > 1 * (topBound+10) + brickHeight/2)
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY + ballDy;
+						bricks1(i) <= '0';
+					-- Collision on top of brick
+					ELSIF (bricks1(i) = '1' AND ((ballPosY+ballSize) <= 1 * (topBound+10) + brickHeight/2) AND ((ballPosY+ballSize) > 1 * (topBound+10))
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY - ballDy;
+						bricks1(i) <= '0';
+					END IF;
+				END LOOP;
+				-- Second row
+				FOR i IN 0 TO 8 LOOP
+					-- Collision on bottom of brick
+					IF (bricks2(i) = '1' AND (ballPosY <= 2 * (topBound+10) + brickHeight) AND (ballPosY > 2 * (topBound+10) + brickHeight/2)
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY + ballDy;
+						bricks2(i) <= '0';
+					-- Collision on top of brick
+					ELSIF (bricks2(i) = '1' AND ((ballPosY+ballSize) <= 2 * (topBound+10) + brickHeight/2) AND ((ballPosY+ballSize) > 2 * (topBound+10))
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY - ballDy;
+						bricks2(i) <= '0';
+					END IF;
+				END LOOP;
+				-- Third row
+				FOR i IN 0 TO 8 LOOP
+					-- Collision on bottom of brick
+					IF (bricks3(i) = '1' AND (ballPosY <= 3 * (topBound+10) + brickHeight) AND (ballPosY > 3 * (topBound+10) + brickHeight/2)
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY + ballDy;
+						bricks3(i) <= '0';
+					-- Collision on top of brick
+					ELSIF (bricks3(i) = '1' AND ((ballPosY+ballSize) <= 3 * (topBound+10) + brickHeight/2) AND ((ballPosY+ballSize) > 3 * (topBound+10))
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY - ballDy;
+						bricks3(i) <= '0';
+					END IF;
+				END LOOP;
+				-- Fourth row
+				FOR i IN 0 TO 8 LOOP
+					-- Collision on bottom of brick
+					IF (bricks4(i) = '1' AND (ballPosY <= 4 * (topBound+10) + brickHeight) AND (ballPosY > 4 * (topBound+10) + brickHeight/2)
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY + ballDy;
+						bricks4(i) <= '0';
+					-- Collision on top of brick
+					ELSIF (bricks4(i) = '1' AND ((ballPosY+ballSize) <= 4 * (topBound+10) + brickHeight/2) AND ((ballPosY+ballSize) > 4 * (topBound+10))
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY - ballDy;
+						bricks4(i) <= '0';
+					END IF;
+				END LOOP;
+				-- Fifth row
+				FOR i IN 0 TO 8 LOOP
+					-- Collision on bottom of brick
+					IF (bricks5(i) = '1' AND (ballPosY <= 5 * (topBound+10) + brickHeight) AND (ballPosY > 5 * (topBound+10) + brickHeight/2)
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY + ballDy;
+						bricks5(i) <= '0';
+					-- Collision on top of brick
+					ELSIF (bricks5(i) = '1' AND ((ballPosY+ballSize) <= 5 * (topBound+10) + brickHeight/2) AND ((ballPosY+ballSize) > 5 * (topBound+10))
+						AND ( ((leftBound + 10 + brickWidth) + i * (brickWidth + 10) - ballPosX) <= (brickWidth+ballSize))) THEN
+						ballDirY <= NOT ballDirY;
+						ballPosY <= ballPosY - ballDy;
+						bricks5(i) <= '0';
+					END IF;
+				END LOOP;
 			END IF;
 		END IF;
 	END PROCESS;
