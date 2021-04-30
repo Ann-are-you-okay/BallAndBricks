@@ -27,23 +27,33 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL writeEnable : STD_LOGIC;
 	SIGNAL prescaler : STD_LOGIC_VECTOR (19 DOWNTO 0);
 	SIGNAL gameClock : STD_LOGIC;
-	
+
 	SIGNAL paddlePos : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
-	SIGNAL ballPosX   : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
-	SIGNAL ballPosY   : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
+	SIGNAL ballPosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
+	SIGNAL ballPosY : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
 
 	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
 	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
 	SIGNAL ballDirX : STD_LOGIC := '1';
 	SIGNAL ballDirY : STD_LOGIC := '1';
 	SIGNAL ballAttached : STD_LOGIC := '1';
-	
-
-	SIGNAL bricks0 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks1 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks2 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks3 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks4 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
+	SIGNAL bricks5 : STD_LOGIC_VECTOR(0 TO 8) := "110011111";
+
+	-- Constants for positions, sizes, etc
+	CONSTANT leftBound : INTEGER := 50;
+	CONSTANT rightBound : INTEGER := 600;
+	CONSTANT topBound : INTEGER := 20;
+	CONSTANT bottomBound : INTEGER := 460;
+	CONSTANT paddleWidth : INTEGER := 75;
+	CONSTANT paddleHeight : INTEGER := 10;
+	CONSTANT paddlePosY : INTEGER := 420;
+	CONSTANT ballSize : INTEGER := 10;
+	CONSTANT brickHeight : INTEGER := 20;
+	CONSTANT brickWidth : INTEGER := 50;
 
 BEGIN
 	clk25_out <= clk25;
@@ -87,10 +97,10 @@ BEGIN
 			END IF;
 
 			-- Draw play area
-			IF (((x >= 50)
-				AND (x < 600)
-				AND (y >= 20)
-				AND (y < 460))
+			IF (((x >= leftBound)
+				AND (x < rightBound)
+				AND (y >= topBound)
+				AND (y < bottomBound))
 				AND (writeEnable = '1'))
 				THEN
 				red_out <= "0110100111";
@@ -102,10 +112,11 @@ BEGIN
 				blue_out <= "0000000000";
 			END IF;
 
-			-- Brick Layer 0 
+			-- Brick Layer 1 
 			FOR i IN 0 TO 8 LOOP
-				IF (bricks0(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 30) AND (Y < 50))
+				IF (bricks1(i) = '1') THEN
+					IF ((writeEnable = '1') AND (x >= (leftBound + 10) + i * (brickWidth + 10)) AND (x < (leftBound + 10 + brickWidth) + i * (brickWidth + 10))
+						AND (Y >= 1 * (topBound + 10)) AND (Y < 1 * (topBound + 10) + brickHeight))
 						THEN
 						red_out <= "1001000111";
 						green_out <= "0001100011";
@@ -114,10 +125,11 @@ BEGIN
 				END IF;
 			END LOOP;
 
-			-- Brick Layer 1 
+			-- Brick Layer 2
 			FOR i IN 0 TO 8 LOOP
-				IF (bricks1(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 60) AND (Y < 80))
+				IF (bricks2(i) = '1') THEN
+					IF ((writeEnable = '1') AND (x >= (leftBound + 10) + i * (brickWidth + 10)) AND (x < (leftBound + 10 + brickWidth) + i * (brickWidth + 10))
+						AND (Y >= 2 * (topBound + 10)) AND (Y < 2 * (topBound + 10) + brickHeight))
 						THEN
 						red_out <= "1100011011";
 						green_out <= "0100011011";
@@ -126,10 +138,11 @@ BEGIN
 				END IF;
 			END LOOP;
 
-			-- Brick Layer 2 
+			-- Brick Layer 3 
 			FOR i IN 0 TO 8 LOOP
-				IF (bricks2(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 90) AND (Y < 110))
+				IF (bricks3(i) = '1') THEN
+					IF ((writeEnable = '1') AND (x >= (leftBound + 10) + i * (brickWidth + 10)) AND (x < (leftBound + 10 + brickWidth) + i * (brickWidth + 10))
+						AND (Y >= 3 * (topBound + 10)) AND (Y < 3 * (topBound + 10) + brickHeight))
 						THEN
 						red_out <= "1001110111";
 						green_out <= "1000011011";
@@ -138,10 +151,11 @@ BEGIN
 				END IF;
 			END LOOP;
 
-			-- Brick Layer 3 
+			-- Brick Layer 4
 			FOR i IN 0 TO 8 LOOP
-				IF (bricks3(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 120) AND (Y < 140))
+				IF (bricks4(i) = '1') THEN
+					IF ((writeEnable = '1') AND (x >= (leftBound + 10) + i * (brickWidth + 10)) AND (x < (leftBound + 10 + brickWidth) + i * (brickWidth + 10))
+						AND (Y >= 4 * (topBound + 10)) AND (Y < 4 * (topBound + 10) + brickHeight))
 						THEN
 						red_out <= "0000101011";
 						green_out <= "0101010011";
@@ -150,10 +164,11 @@ BEGIN
 				END IF;
 			END LOOP;
 
-			-- Brick Layer 4 
+			-- Brick Layer 5 
 			FOR i IN 0 TO 8 LOOP
-				IF (bricks4(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 150) AND (Y < 170))
+				IF (bricks5(i) = '1') THEN
+					IF ((writeEnable = '1') AND (x >= (leftBound + 10) + i * (brickWidth + 10)) AND (x < (leftBound + 10 + brickWidth) + i * (brickWidth + 10))
+						AND (Y >= 5 * (topBound + 10)) AND (Y < 5 * (topBound + 10) + brickHeight))
 						THEN
 						red_out <= "0110110011";
 						green_out <= "1011110011";
@@ -163,7 +178,7 @@ BEGIN
 			END LOOP;
 
 			-- Draw the paddle
-			IF ((writeEnable = '1') AND(x >= paddlePos) AND (x < paddlePos + 75) AND (Y >= 420) AND (Y < 430))
+			IF ((writeEnable = '1') AND (x >= paddlePos) AND (x < paddlePos + paddleWidth) AND (Y >= paddlePosY) AND (Y < paddlePosY + paddleHeight))
 				THEN
 				red_out <= "1111111111";
 				green_out <= "1111111111";
@@ -171,7 +186,7 @@ BEGIN
 			END IF;
 
 			-- Draw the ball
-			IF ((writeEnable = '1') AND(x >= ballPosX) AND (x < ballPosX + 10) AND (Y >= ballPosY) AND (Y < ballPosY + 10))
+			IF ((writeEnable = '1') AND (x >= ballPosX) AND (x < ballPosX + ballSize) AND (Y >= ballPosY) AND (Y < ballPosY + ballSize))
 				THEN
 				red_out <= "0000000000";
 				green_out <= "0000000000";
@@ -219,7 +234,7 @@ BEGIN
 			-- If the left button was pressed
 			IF (leftBtn = '0') THEN
 				-- and if the paddle can move more left
-				IF ((paddlePos - 5) >= 50) THEN
+				IF ((paddlePos - 5) >= leftBound) THEN
 					-- Move the paddle left
 					paddlePos <= paddlePos - 5;
 					-- Move the ball left w/ the paddle if it is attached
@@ -227,10 +242,10 @@ BEGIN
 						ballPosX <= ballPosX - 5;
 					END IF;
 				END IF;
-			-- If the right button was pressed
+				-- If the right button was pressed
 			ELSIF (rightBtn = '0') THEN
 				-- and if the paddle can move more right
-				IF ((paddlePos + 5) < 600 - 75) THEN
+				IF ((paddlePos + 5) < rightBound - paddleWidth) THEN
 					-- Move the paddle right
 					paddlePos <= paddlePos + 5;
 					-- Move the ball right w/ the paddle if it is attached
@@ -260,22 +275,22 @@ BEGIN
 				END IF;
 
 				-- Bounce off left wall
-				IF (ballPosX <= 50) THEN
+				IF (ballPosX <= leftBound) THEN
 					ballDirX <= NOT ballDirX;
 					ballPosX <= ballPosX + ballDx;
 				END IF;
 				-- Bounch off right wall
-				IF (ballPosX+10 >= 600) THEN
+				IF (ballPosX + ballSize >= rightBound) THEN
 					ballDirX <= NOT ballDirX;
 					ballPosX <= ballPosX - ballDx;
 				END IF;
 				-- Bounce off top wall
-				IF (ballPosY <= 20) THEN
+				IF (ballPosY <= topBound) THEN
 					ballDirY <= NOT ballDirY;
 					ballPosY <= ballPosY + ballDy;
 				END IF;
 				-- bounce off bottom wall
-				IF (ballPosY+10 >= 460) THEN
+				IF (ballPosY + ballSize >= bottomBound) THEN
 					ballDirY <= NOT ballDirY;
 					ballPosY <= ballPosY - ballDy;
 				END IF;
