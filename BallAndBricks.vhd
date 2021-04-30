@@ -14,8 +14,8 @@ ENTITY BallAndBricks IS
 		blank : OUT STD_LOGIC;
 		vs_out : OUT STD_LOGIC;
 		leftBtn : IN STD_LOGIC;
-		rightBtn : IN STD_LOGIC
-
+		rightBtn : IN STD_LOGIC;
+		fireBtn : IN STD_LOGIC
 	);
 END BallAndBricks;
 ARCHITECTURE Design OF BallAndBricks IS
@@ -25,15 +25,25 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL x : STD_LOGIC_VECTOR (9 DOWNTO 0) := "0000000000";
 	SIGNAL y : STD_LOGIC_VECTOR (9 DOWNTO 0) := "0000000000";
 	SIGNAL writeEnable : STD_LOGIC;
-	SIGNAL paddlePos : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
-	SIGNAL prescaler : STD_LOGIC_VECTOR (18 DOWNTO 0);
+	SIGNAL prescaler : STD_LOGIC_VECTOR (19 DOWNTO 0);
 	SIGNAL gameClock : STD_LOGIC;
+	
+	SIGNAL paddlePos : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
+	SIGNAL ballPosX   : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
+	SIGNAL ballPosY   : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
 
-	SIGNAL bricks0 : STD_LOGIC_VECTOR(0 TO 8) := "000000000";
-	SIGNAL bricks1 : STD_LOGIC_VECTOR(0 TO 8) := "000000000";
-	SIGNAL bricks2 : STD_LOGIC_VECTOR(0 TO 8) := "000011100";
-	SIGNAL bricks3 : STD_LOGIC_VECTOR(0 TO 8) := "000001100";
-	SIGNAL bricks4 : STD_LOGIC_VECTOR(0 TO 8) := "000000000";
+	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
+	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
+	SIGNAL ballDirX : STD_LOGIC := '1';
+	SIGNAL ballDirY : STD_LOGIC := '1';
+	SIGNAL ballAttached : STD_LOGIC := '1';
+	
+
+	SIGNAL bricks0 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
+	SIGNAL bricks1 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
+	SIGNAL bricks2 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
+	SIGNAL bricks3 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
+	SIGNAL bricks4 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 
 BEGIN
 	clk25_out <= clk25;
@@ -45,9 +55,9 @@ BEGIN
 		IF clk50_in'EVENT AND clk50_in = '1' THEN
 			prescaler <= prescaler + 1;
 
-			IF (prescaler = "1000000000000000000") THEN
+			IF (prescaler = "11000000000000000000") THEN
 				gameClock <= '1';
-				prescaler <= "0000000000000000000";
+				prescaler <= "00000000000000000000";
 			ELSE
 				gameClock <= '0';
 			END IF;
@@ -79,8 +89,8 @@ BEGIN
 			-- Draw play area
 			IF (((x >= 50)
 				AND (x < 600)
-				AND (y >= 0)
-				AND (y < 480))
+				AND (y >= 20)
+				AND (y < 460))
 				AND (writeEnable = '1'))
 				THEN
 				red_out <= "0110100111";
@@ -95,7 +105,7 @@ BEGIN
 			-- Brick Layer 0 
 			FOR i IN 0 TO 8 LOOP
 				IF (bricks0(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 10) AND (Y < 30))
+					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 30) AND (Y < 50))
 						THEN
 						red_out <= "1001000111";
 						green_out <= "0001100011";
@@ -107,7 +117,7 @@ BEGIN
 			-- Brick Layer 1 
 			FOR i IN 0 TO 8 LOOP
 				IF (bricks1(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 40) AND (Y < 60))
+					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 60) AND (Y < 80))
 						THEN
 						red_out <= "1100011011";
 						green_out <= "0100011011";
@@ -119,7 +129,7 @@ BEGIN
 			-- Brick Layer 2 
 			FOR i IN 0 TO 8 LOOP
 				IF (bricks2(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 70) AND (Y < 90))
+					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 90) AND (Y < 110))
 						THEN
 						red_out <= "1001110111";
 						green_out <= "1000011011";
@@ -131,7 +141,7 @@ BEGIN
 			-- Brick Layer 3 
 			FOR i IN 0 TO 8 LOOP
 				IF (bricks3(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 100) AND (Y < 120))
+					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 120) AND (Y < 140))
 						THEN
 						red_out <= "0000101011";
 						green_out <= "0101010011";
@@ -143,7 +153,7 @@ BEGIN
 			-- Brick Layer 4 
 			FOR i IN 0 TO 8 LOOP
 				IF (bricks4(i) = '1') THEN
-					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 130) AND (Y < 150))
+					IF ((writeEnable = '1') AND(x >= 60 + 60 * i) AND (x < 110 + 60 * i) AND (Y >= 150) AND (Y < 170))
 						THEN
 						red_out <= "0110110011";
 						green_out <= "1011110011";
@@ -153,10 +163,18 @@ BEGIN
 			END LOOP;
 
 			-- Draw the paddle
-			IF ((writeEnable = '1') AND(x >= paddlePos) AND (x < paddlePos + 75) AND (Y >= 440) AND (Y < 450))
+			IF ((writeEnable = '1') AND(x >= paddlePos) AND (x < paddlePos + 75) AND (Y >= 420) AND (Y < 430))
 				THEN
 				red_out <= "1111111111";
 				green_out <= "1111111111";
+				blue_out <= "1111111111";
+			END IF;
+
+			-- Draw the ball
+			IF ((writeEnable = '1') AND(x >= ballPosX) AND (x < ballPosX + 10) AND (Y >= ballPosY) AND (Y < ballPosY + 10))
+				THEN
+				red_out <= "0000000000";
+				green_out <= "0000000000";
 				blue_out <= "1111111111";
 			END IF;
 
@@ -191,19 +209,75 @@ BEGIN
 	PROCESS (gameClock)
 	BEGIN
 		IF gameClock'EVENT AND gameClock = '1' THEN
+
+			-- If the fire button was pressed and the ball was attached
+			IF (fireBtn = '0' AND ballAttached = '1') THEN
+				-- De-attach the ball
+				ballAttached <= '0';
+			END IF;
+
 			-- If the left button was pressed
 			IF (leftBtn = '0') THEN
 				-- and if the paddle can move more left
-				IF ((paddlePos - 1) >= 50) THEN
+				IF ((paddlePos - 5) >= 50) THEN
 					-- Move the paddle left
-					paddlePos <= paddlePos - 1;
+					paddlePos <= paddlePos - 5;
+					-- Move the ball left w/ the paddle if it is attached
+					IF (ballAttached = '1') THEN
+						ballPosX <= ballPosX - 5;
+					END IF;
 				END IF;
 			-- If the right button was pressed
 			ELSIF (rightBtn = '0') THEN
 				-- and if the paddle can move more right
-				IF ((paddlePos + 1) < 600 - 75) THEN
+				IF ((paddlePos + 5) < 600 - 75) THEN
 					-- Move the paddle right
-					paddlePos <= paddlePos + 1;
+					paddlePos <= paddlePos + 5;
+					-- Move the ball right w/ the paddle if it is attached
+					IF (ballAttached = '1') THEN
+						ballPosX <= ballPosX + 5;
+					END IF;
+				END IF;
+			END IF;
+
+			-- Ball movement
+			-- Only active when the ball isn't attached to the paddle
+			IF (ballAttached = '0') THEN
+				IF (ballDirX = '1') THEN
+					-- Move right by Dx
+					ballPosX <= ballPosX + ballDx;
+				ELSE
+					-- Move left by Dx
+					ballPosX <= ballPosX - ballDx;
+				END IF;
+
+				IF (ballDirY = '1') THEN
+					-- Move up by Dy
+					ballPosY <= ballPosY - ballDy;
+				ELSE
+					-- Move down by Dy
+					ballPosY <= ballPosY + ballDy;
+				END IF;
+
+				-- Bounce off left wall
+				IF (ballPosX <= 50) THEN
+					ballDirX <= NOT ballDirX;
+					ballPosX <= ballPosX + ballDx;
+				END IF;
+				-- Bounch off right wall
+				IF (ballPosX+10 >= 600) THEN
+					ballDirX <= NOT ballDirX;
+					ballPosX <= ballPosX - ballDx;
+				END IF;
+				-- Bounce off top wall
+				IF (ballPosY <= 20) THEN
+					ballDirY <= NOT ballDirY;
+					ballPosY <= ballPosY + ballDy;
+				END IF;
+				-- bounce off bottom wall
+				IF (ballPosY+10 >= 460) THEN
+					ballDirY <= NOT ballDirY;
+					ballPosY <= ballPosY - ballDy;
 				END IF;
 			END IF;
 		END IF;
