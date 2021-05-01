@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("C:/altera/13.0sp1/Projects/BallAndBricks/output_files/") File("BallAndBricks.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("C:/Users/Nitoy/Desktop/BallAndBricks/output_files/") File("BallAndBricks.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
