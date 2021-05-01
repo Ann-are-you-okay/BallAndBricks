@@ -1,12 +1,23 @@
+<<<<<<< Updated upstream
 Analysis & Synthesis Status : Successful - Fri Apr 30 15:33:30 2021
+=======
+Analysis & Synthesis Status : Successful - Fri Apr 30 15:04:54 2021
+>>>>>>> Stashed changes
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : BallAndBricks
 Top-level Entity Name : BallAndBricks
 Family : Cyclone II
+<<<<<<< Updated upstream
 Total logic elements : 1,025
     Total combinational functions : 999
     Dedicated logic registers : 173
 Total registers : 173
+=======
+Total logic elements : 460
+    Total combinational functions : 435
+    Dedicated logic registers : 126
+Total registers : 126
+>>>>>>> Stashed changes
 Total pins : 39
 Total virtual pins : 0
 Total memory bits : 0

@@ -5,14 +5,18 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 ENTITY BallAndBricks IS
 	PORT (
 		clk50_in : IN STD_LOGIC;
+		clk25_out : OUT STD_LOGIC;
+
 		red_out : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 		green_out : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
 		blue_out : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+
 		hs_out : OUT STD_LOGIC;
-		clk25_out : OUT STD_LOGIC;
+		vs_out : OUT STD_LOGIC;
+
 		sync : OUT STD_LOGIC;
 		blank : OUT STD_LOGIC;
-		vs_out : OUT STD_LOGIC;
+
 		leftBtn : IN STD_LOGIC;
 		rightBtn : IN STD_LOGIC;
 		fireBtn : IN STD_LOGIC
@@ -26,14 +30,19 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL y : STD_LOGIC_VECTOR (9 DOWNTO 0) := "0000000000";
 	SIGNAL writeEnable : STD_LOGIC;
 	SIGNAL prescaler : STD_LOGIC_VECTOR (19 DOWNTO 0);
-	SIGNAL gameClock : STD_LOGIC;
+	SIGNAL gameClock : STD_LOGIC;--------------------------------(?)-Ann
 
 	SIGNAL paddlePos : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
 	SIGNAL ballPosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
 	SIGNAL ballPosY : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
 
+<<<<<<< Updated upstream
 	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "010";
 	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "011";
+=======
+	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; --org: 001
+	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; --org: 100
+>>>>>>> Stashed changes
 	SIGNAL ballDirX : STD_LOGIC := '1';
 	SIGNAL ballDirY : STD_LOGIC := '1';
 	SIGNAL ballAttached : STD_LOGIC := '1';
@@ -48,9 +57,11 @@ ARCHITECTURE Design OF BallAndBricks IS
 	CONSTANT rightBound : INTEGER := 600;
 	CONSTANT topBound : INTEGER := 20;
 	CONSTANT bottomBound : INTEGER := 460;
+
 	CONSTANT paddleWidth : INTEGER := 75;
 	CONSTANT paddleHeight : INTEGER := 10;
 	CONSTANT paddlePosY : INTEGER := 420;
+
 	CONSTANT ballSize : INTEGER := 10;
 	CONSTANT brickHeight : INTEGER := 20;
 	CONSTANT brickWidth : INTEGER := 50;
@@ -96,7 +107,7 @@ BEGIN
 				writeEnable <= '0';
 			END IF;
 
-			-- Draw play area
+			-- Draw play area, background
 			IF (((x >= leftBound)
 				AND (x < rightBound)
 				AND (y >= topBound)
@@ -242,7 +253,8 @@ BEGIN
 						ballPosX <= ballPosX - 5;
 					END IF;
 				END IF;
-				-- If the right button was pressed
+			
+			-- If the right button was pressed
 			ELSIF (rightBtn = '0') THEN
 				-- and if the paddle can move more right
 				IF ((paddlePos + 5) < rightBound - paddleWidth) THEN
@@ -258,6 +270,7 @@ BEGIN
 			-- Ball movement
 			-- Only active when the ball isn't attached to the paddle
 			IF (ballAttached = '0') THEN
+
 				IF (ballDirX = '1') THEN
 					-- Move right by Dx
 					ballPosX <= ballPosX + ballDx;
@@ -266,6 +279,7 @@ BEGIN
 					ballPosX <= ballPosX - ballDx;
 				END IF;
 
+
 				IF (ballDirY = '1') THEN
 					-- Move up by Dy
 					ballPosY <= ballPosY - ballDy;
@@ -273,6 +287,7 @@ BEGIN
 					-- Move down by Dy
 					ballPosY <= ballPosY + ballDy;
 				END IF;
+
 
 				-- Bounce off left wall
 				IF (ballPosX <= leftBound) THEN
@@ -295,6 +310,7 @@ BEGIN
 					ballPosY <= ballPosY - ballDy;
 				END IF;
 
+<<<<<<< Updated upstream
 				-- First row
 				FOR i IN 0 TO 8 LOOP
 					-- Collision on bottom of brick
@@ -375,6 +391,16 @@ BEGIN
 						bricks5(i) <= '0';
 					END IF;
 				END LOOP;
+=======
+				--
+				IF ((ballPosX >= (leftBound + 10) + (brickWidth + 10)) AND (ballPosX < (leftBound + 10 + brickWidth) + (brickWidth + 10))
+					AND (ballPosY >= 1 * (topBound + 10)) AND (ballPosY < 1 * (topBound + 10) + brickHeight))
+					THEN
+					bricks4 <= bricks4 NAND "10000000";
+				END IF;
+
+
+>>>>>>> Stashed changes
 			END IF;
 		END IF;
 	END PROCESS;

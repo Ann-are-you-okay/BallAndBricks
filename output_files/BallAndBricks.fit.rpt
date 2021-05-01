@@ -1,5 +1,9 @@
 Fitter report for BallAndBricks
+<<<<<<< Updated upstream
 Fri Apr 30 15:33:38 2021
+=======
+Fri Apr 30 15:05:08 2021
+>>>>>>> Stashed changes
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -62,17 +66,28 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
+<<<<<<< Updated upstream
 ; Fitter Status                      ; Successful - Fri Apr 30 15:33:38 2021            ;
+=======
+; Fitter Status                      ; Successful - Fri Apr 30 15:05:08 2021            ;
+>>>>>>> Stashed changes
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; BallAndBricks                                    ;
 ; Top-level Entity Name              ; BallAndBricks                                    ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C35F672C6                                     ;
 ; Timing Models                      ; Final                                            ;
+<<<<<<< Updated upstream
 ; Total logic elements               ; 1,007 / 33,216 ( 3 % )                           ;
 ;     Total combinational functions  ; 999 / 33,216 ( 3 % )                             ;
 ;     Dedicated logic registers      ; 173 / 33,216 ( < 1 % )                           ;
 ; Total registers                    ; 173                                              ;
+=======
+; Total logic elements               ; 443 / 33,216 ( 1 % )                             ;
+;     Total combinational functions  ; 435 / 33,216 ( 1 % )                             ;
+;     Dedicated logic registers      ; 126 / 33,216 ( < 1 % )                           ;
+; Total registers                    ; 126                                              ;
+>>>>>>> Stashed changes
 ; Total pins                         ; 39 / 475 ( 8 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                              ;
@@ -138,7 +153,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 10     ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -149,8 +164,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
+<<<<<<< Updated upstream
 ;     -- Requested    ; 0 / 1218 ( 0.00 % )    ;
 ;     -- Achieved     ; 0 / 1218 ( 0.00 % )    ;
+=======
+;     -- Requested    ; 0 / 607 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 607 ( 0.00 % )     ;
+>>>>>>> Stashed changes
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -173,7 +193,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
+<<<<<<< Updated upstream
 ; Top                            ; 1215    ; 0                 ; N/A                     ; Source File       ;
+=======
+; Top                            ; 604     ; 0                 ; N/A                     ; Source File       ;
+>>>>>>> Stashed changes
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -181,7 +205,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output_files/BallAndBricks.pin.
+The pin-out file can be found in C:/Users/Nitoy/Desktop/BallAndBricks/output_files/BallAndBricks.pin.
 
 
 +----------------------------------------------------------------------+
@@ -189,6 +213,7 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
+<<<<<<< Updated upstream
 ; Total logic elements                        ; 1,007 / 33,216 ( 3 % ) ;
 ;     -- Combinational with no register       ; 834                    ;
 ;     -- Register only                        ; 8                      ;
@@ -209,6 +234,28 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 ;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
 ;                                             ;                        ;
 ; Total LABs:  partially or completely used   ; 76 / 2,076 ( 4 % )     ;
+=======
+; Total logic elements                        ; 443 / 33,216 ( 1 % )   ;
+;     -- Combinational with no register       ; 317                    ;
+;     -- Register only                        ; 8                      ;
+;     -- Combinational with a register        ; 118                    ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 175                    ;
+;     -- 3 input functions                    ; 94                     ;
+;     -- <=2 input functions                  ; 166                    ;
+;     -- Register only                        ; 8                      ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 257                    ;
+;     -- arithmetic mode                      ; 178                    ;
+;                                             ;                        ;
+; Total registers*                            ; 126 / 34,593 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 126 / 33,216 ( < 1 % ) ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
+;                                             ;                        ;
+; Total LABs:  partially or completely used   ; 33 / 2,076 ( 2 % )     ;
+>>>>>>> Stashed changes
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 39 / 475 ( 8 % )       ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
@@ -223,12 +270,21 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 ; JTAGs                                       ; 0 / 1 ( 0 % )          ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
+<<<<<<< Updated upstream
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 1%           ;
 ; Peak interconnect usage (total/H/V)         ; 7% / 6% / 8%           ;
 ; Maximum fan-out                             ; 78                     ;
 ; Highest non-global fan-out                  ; 70                     ;
 ; Total fan-out                               ; 3592                   ;
 ; Average fan-out                             ; 2.93                   ;
+=======
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
+; Peak interconnect usage (total/H/V)         ; 3% / 3% / 4%           ;
+; Maximum fan-out                             ; 72                     ;
+; Highest non-global fan-out                  ; 24                     ;
+; Total fan-out                               ; 1636                   ;
+; Average fan-out                             ; 2.68                   ;
+>>>>>>> Stashed changes
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -241,6 +297,7 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
+<<<<<<< Updated upstream
 ; Total logic elements                        ; 1007 / 33216 ( 3 % )  ; 0 / 33216 ( 0 % )              ;
 ;     -- Combinational with no register       ; 834                   ; 0                              ;
 ;     -- Register only                        ; 8                     ; 0                              ;
@@ -260,6 +317,27 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 ;     -- Dedicated logic registers            ; 173 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
 ;                                             ;                       ;                                ;
 ; Total LABs:  partially or completely used   ; 76 / 2076 ( 4 % )     ; 0 / 2076 ( 0 % )               ;
+=======
+; Total logic elements                        ; 443 / 33216 ( 1 % )   ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 317                   ; 0                              ;
+;     -- Register only                        ; 8                     ; 0                              ;
+;     -- Combinational with a register        ; 118                   ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic element usage by number of LUT inputs ;                       ;                                ;
+;     -- 4 input functions                    ; 175                   ; 0                              ;
+;     -- 3 input functions                    ; 94                    ; 0                              ;
+;     -- <=2 input functions                  ; 166                   ; 0                              ;
+;     -- Register only                        ; 8                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic elements by mode                      ;                       ;                                ;
+;     -- normal mode                          ; 257                   ; 0                              ;
+;     -- arithmetic mode                      ; 178                   ; 0                              ;
+;                                             ;                       ;                                ;
+; Total registers                             ; 126                   ; 0                              ;
+;     -- Dedicated logic registers            ; 126 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;                                             ;                       ;                                ;
+; Total LABs:  partially or completely used   ; 33 / 2076 ( 2 % )     ; 0 / 2076 ( 0 % )               ;
+>>>>>>> Stashed changes
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 39                    ; 0                              ;
@@ -275,8 +353,13 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
+<<<<<<< Updated upstream
 ;     -- Total Connections                    ; 3592                  ; 0                              ;
 ;     -- Registered Connections               ; 1222                  ; 0                              ;
+=======
+;     -- Total Connections                    ; 1636                  ; 0                              ;
+;     -- Registered Connections               ; 597                   ; 0                              ;
+>>>>>>> Stashed changes
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -310,7 +393,11 @@ The pin-out file can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; clk50_in ; N2    ; 2        ; 0            ; 18           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; fireBtn  ; W26   ; 6        ; 65           ; 10           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+<<<<<<< Updated upstream
 ; leftBtn  ; N23   ; 5        ; 65           ; 20           ; 2           ; 13                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+=======
+; leftBtn  ; N23   ; 5        ; 65           ; 20           ; 2           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+>>>>>>> Stashed changes
 ; rightBtn ; G26   ; 5        ; 65           ; 27           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -1097,7 +1184,11 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
+<<<<<<< Updated upstream
 ; |BallAndBricks             ; 1007 (1007) ; 173 (173)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 39   ; 0            ; 834 (834)    ; 8 (8)             ; 165 (165)        ; |BallAndBricks      ; work         ;
+=======
+; |BallAndBricks             ; 443 (443)   ; 126 (126)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 39   ; 0            ; 317 (317)    ; 8 (8)             ; 118 (118)        ; |BallAndBricks      ; work         ;
+>>>>>>> Stashed changes
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1107,6 +1198,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------+----------+---------------+---------------+-----------------------+-----+
 ; Name         ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
 +--------------+----------+---------------+---------------+-----------------------+-----+
+; clk25_out    ; Output   ; --            ; --            ; --                    ; --  ;
 ; red_out[0]   ; Output   ; --            ; --            ; --                    ; --  ;
 ; red_out[1]   ; Output   ; --            ; --            ; --                    ; --  ;
 ; red_out[2]   ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1138,10 +1230,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; blue_out[8]  ; Output   ; --            ; --            ; --                    ; --  ;
 ; blue_out[9]  ; Output   ; --            ; --            ; --                    ; --  ;
 ; hs_out       ; Output   ; --            ; --            ; --                    ; --  ;
-; clk25_out    ; Output   ; --            ; --            ; --                    ; --  ;
+; vs_out       ; Output   ; --            ; --            ; --                    ; --  ;
 ; sync         ; Output   ; --            ; --            ; --                    ; --  ;
 ; blank        ; Output   ; --            ; --            ; --                    ; --  ;
-; vs_out       ; Output   ; --            ; --            ; --                    ; --  ;
 ; clk50_in     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; leftBtn      ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; rightBtn     ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
@@ -1165,6 +1256,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Add8~30        ; 0                 ; 6       ;
 ;      - Add8~32        ; 0                 ; 6       ;
 ;      - Add8~34        ; 0                 ; 6       ;
+<<<<<<< Updated upstream
 ;      - ballPosX[7]~1  ; 0                 ; 6       ;
 ;      - ballPosX[7]~4  ; 0                 ; 6       ;
 ;      - ballPosX~22    ; 0                 ; 6       ;
@@ -1172,11 +1264,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; rightBtn              ;                   ;         ;
 ;      - ballPosX[7]~4  ; 0                 ; 6       ;
 ;      - ballPosX~23    ; 0                 ; 6       ;
+=======
+;      - ballPosX[2]~2  ; 0                 ; 6       ;
+;      - ballPosX[2]~6  ; 0                 ; 6       ;
+;      - ballPosX[2]~8  ; 0                 ; 6       ;
+;      - ballPosX[2]~9  ; 0                 ; 6       ;
+;      - ballPosX~26    ; 0                 ; 6       ;
+;      - ballPosX~28    ; 0                 ; 6       ;
+;      - ballPosX[2]~29 ; 0                 ; 6       ;
+; rightBtn              ;                   ;         ;
+;      - ballPosX[2]~8  ; 1                 ; 6       ;
+;      - ballPosX[2]~29 ; 1                 ; 6       ;
+>>>>>>> Stashed changes
 ; fireBtn               ;                   ;         ;
 ;      - ballAttached~0 ; 0                 ; 6       ;
 +-----------------------+-------------------+---------+
 
 
+<<<<<<< Updated upstream
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 ; Control Signals                                                                                                                            ;
 +---------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
@@ -1190,6 +1295,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; gameClock     ; LCFF_X34_Y1_N23    ; 78      ; Clock        ; yes    ; Global Clock         ; GCLK15           ; --                        ;
 ; process_1~59  ; LCCOMB_X28_Y23_N24 ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +---------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+=======
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                             ;
++----------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name           ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; ballAttached   ; LCFF_X33_Y28_N25   ; 24      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ballPosX[1]~27 ; LCCOMB_X36_Y29_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ballPosX[2]~11 ; LCCOMB_X36_Y29_N4  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ballPosX[2]~29 ; LCCOMB_X37_Y28_N2  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clk25          ; LCFF_X1_Y18_N21    ; 72      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; clk50_in       ; PIN_N2             ; 22      ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; gameClock      ; LCFF_X34_Y2_N11    ; 32      ; Clock        ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; process_1~55   ; LCCOMB_X31_Y29_N24 ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
++----------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+>>>>>>> Stashed changes
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -1197,9 +1318,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------+-----------------+---------+----------------------+------------------+---------------------------+
 ; Name      ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------+-----------------+---------+----------------------+------------------+---------------------------+
+<<<<<<< Updated upstream
 ; clk25     ; LCFF_X1_Y18_N21 ; 73      ; Global Clock         ; GCLK3            ; --                        ;
 ; clk50_in  ; PIN_N2          ; 22      ; Global Clock         ; GCLK2            ; --                        ;
 ; gameClock ; LCFF_X34_Y1_N23 ; 78      ; Global Clock         ; GCLK15           ; --                        ;
+=======
+; clk25     ; LCFF_X1_Y18_N21 ; 72      ; Global Clock         ; GCLK3            ; --                        ;
+; clk50_in  ; PIN_N2          ; 22      ; Global Clock         ; GCLK2            ; --                        ;
+; gameClock ; LCFF_X34_Y2_N11 ; 32      ; Global Clock         ; GCLK15           ; --                        ;
+>>>>>>> Stashed changes
 +-----------+-----------------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1216,6 +1343,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; process_2~38          ; 23      ;
 ; process_1~59          ; 21      ;
 ; x[6]                  ; 21      ;
+<<<<<<< Updated upstream
 ; x[5]                  ; 19      ;
 ; process_2~45          ; 18      ;
 ; ballPosX[7]~1         ; 18      ;
@@ -1343,6 +1471,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add3~16               ; 6       ;
 ; Add3~14               ; 6       ;
 ; Add3~12               ; 6       ;
+=======
+; process_1~55          ; 20      ;
+; x[7]                  ; 19      ;
+; process_1~6           ; 18      ;
+; x[5]                  ; 18      ;
+; process_1~3           ; 17      ;
+; leftBtn               ; 16      ;
+; ballPosX[2]~3         ; 16      ;
+; x[4]                  ; 15      ;
+; Equal1~2              ; 14      ;
+; y[4]                  ; 14      ;
+; y[5]                  ; 14      ;
+; x[3]                  ; 14      ;
+; x[8]                  ; 14      ;
+; y[6]                  ; 13      ;
+; x[2]                  ; 13      ;
+; x[9]                  ; 13      ;
+; red_out~31            ; 12      ;
+; blue_out[7]~10        ; 11      ;
+; y[3]                  ; 11      ;
+; x[1]                  ; 11      ;
+; ballPosX[2]~29        ; 10      ;
+; Equal2~2              ; 10      ;
+; red_out~28            ; 10      ;
+; red_out~24            ; 10      ;
+; y[2]                  ; 10      ;
+; writeEnable           ; 10      ;
+; ballPosX[7]           ; 9       ;
+; ballPosX[2]~11        ; 8       ;
+; blue_out[5]~13        ; 8       ;
+; red_out~15            ; 8       ;
+; y[8]                  ; 8       ;
+; ballPosX[2]           ; 8       ;
+; ballPosX[3]           ; 8       ;
+; ballPosX[4]           ; 8       ;
+; ballPosX[5]           ; 8       ;
+; ballPosX[6]           ; 8       ;
+; ballPosX[8]           ; 8       ;
+; ballPosX[9]           ; 8       ;
+; ballPosY[2]~0         ; 7       ;
+; blue_out[7]~18        ; 7       ;
+; process_1~19          ; 7       ;
+; y[7]                  ; 7       ;
+; y[9]                  ; 7       ;
+; red_out~53            ; 6       ;
+; vertical_counter[9]   ; 6       ;
+; red_out~23            ; 6       ;
+; process_1~39          ; 6       ;
+; process_1~37          ; 6       ;
+; process_1~12          ; 6       ;
+; ballPosX[1]           ; 6       ;
+>>>>>>> Stashed changes
 ; vertical_counter[8]   ; 5       ;
 ; vertical_counter[7]   ; 5       ;
 ; vertical_counter[6]   ; 5       ;
@@ -1354,6 +1534,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; horizontal_counter[9] ; 5       ;
 ; horizontal_counter[8] ; 5       ;
 ; horizontal_counter[7] ; 5       ;
+<<<<<<< Updated upstream
 ; red_out~149           ; 5       ;
 ; green_out~7           ; 5       ;
 ; red_out[3]~146        ; 5       ;
@@ -1364,6 +1545,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; bricks1[2]            ; 5       ;
 ; red_out~63            ; 5       ;
 ; process_1~18          ; 5       ;
+=======
+; blue_out~21           ; 5       ;
+; blue_out[5]~15        ; 5       ;
+; process_1~22          ; 5       ;
+; process_1~14          ; 5       ;
+; LessThan26~0          ; 5       ;
+>>>>>>> Stashed changes
 ; paddlePos[0]          ; 5       ;
 ; paddlePos[1]          ; 5       ;
 ; paddlePos[2]          ; 5       ;
@@ -1374,15 +1562,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; paddlePos[7]          ; 5       ;
 ; paddlePos[8]          ; 5       ;
 ; paddlePos[9]          ; 5       ;
+<<<<<<< Updated upstream
 ; red_out[3]~209        ; 4       ;
 ; red_out~204           ; 4       ;
 ; red_out~202           ; 4       ;
+=======
+; y[1]                  ; 5       ;
+; ballPosY[2]           ; 5       ;
+; ballPosY[3]           ; 5       ;
+; ballPosY[4]           ; 5       ;
+; ballPosY[5]           ; 5       ;
+; ballPosX[0]           ; 5       ;
+>>>>>>> Stashed changes
 ; Equal0~5              ; 4       ;
 ; Equal0~0              ; 4       ;
 ; vertical_counter[0]   ; 4       ;
 ; horizontal_counter[6] ; 4       ;
 ; horizontal_counter[4] ; 4       ;
 ; horizontal_counter[5] ; 4       ;
+<<<<<<< Updated upstream
 ; blue_out~19           ; 4       ;
 ; red_out~170           ; 4       ;
 ; red_out[3]~150        ; 4       ;
@@ -1428,10 +1626,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LessThan59~0          ; 3       ;
 ; process_2~3           ; 3       ;
 ; process_2~2           ; 3       ;
+=======
+; red_out~35            ; 4       ;
+; blue_out[5]~12        ; 4       ;
+; red_out~33            ; 4       ;
+; process_1~46          ; 4       ;
+; process_1~30          ; 4       ;
+; process_1~29          ; 4       ;
+; LessThan2~1           ; 4       ;
+; ballPosY[6]           ; 4       ;
+; ballPosY[7]           ; 4       ;
+; ballPosY[8]           ; 4       ;
+; ballPosY[9]           ; 4       ;
+; x[0]                  ; 4       ;
+; vertical_counter[0]   ; 3       ;
+; bricks4[1]~0          ; 3       ;
+>>>>>>> Stashed changes
 ; horizontal_counter[0] ; 3       ;
 ; horizontal_counter[1] ; 3       ;
 ; horizontal_counter[2] ; 3       ;
 ; horizontal_counter[3] ; 3       ;
+<<<<<<< Updated upstream
 ; green_out~35          ; 3       ;
 ; green_out~10          ; 3       ;
 ; red_out~183           ; 3       ;
@@ -1460,6 +1675,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; green_out~49          ; 2       ;
 ; process_1~60          ; 2       ;
 ; red_out~203           ; 2       ;
+=======
+; ballPosX[2]~10        ; 3       ;
+; ballPosX[2]~7         ; 3       ;
+; blue_out[7]~24        ; 3       ;
+; green_out~2           ; 3       ;
+; red_out~37            ; 3       ;
+; process_1~47          ; 3       ;
+; red_out~32            ; 3       ;
+; process_1~42          ; 3       ;
+; process_1~15          ; 3       ;
+; LessThan4~0           ; 3       ;
+; Add2~14               ; 3       ;
+; Add2~12               ; 3       ;
+; rightBtn              ; 2       ;
+; blue_out~31           ; 2       ;
+; red_out~54            ; 2       ;
+>>>>>>> Stashed changes
 ; prescaler[15]         ; 2       ;
 ; prescaler[14]         ; 2       ;
 ; prescaler[13]         ; 2       ;
@@ -1480,6 +1712,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; prescaler[16]         ; 2       ;
 ; prescaler[19]         ; 2       ;
 ; prescaler[18]         ; 2       ;
+<<<<<<< Updated upstream
 ; bricks2[0]~16         ; 2       ;
 ; bricks1[0]~16         ; 2       ;
 ; bricks1[8]~14         ; 2       ;
@@ -1517,10 +1750,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LessThan57~0          ; 2       ;
 ; LessThan47~2          ; 2       ;
 ; LessThan46~2          ; 2       ;
+=======
+; LessThan51~2          ; 2       ;
+; ballDirY              ; 2       ;
+; LessThan50~0          ; 2       ;
+; ballPosX[1]~27        ; 2       ;
+; ballPosX[2]~8         ; 2       ;
+; LessThan49~2          ; 2       ;
+>>>>>>> Stashed changes
 ; LessThan49~1          ; 2       ;
 ; LessThan48~2          ; 2       ;
 ; ballDirX              ; 2       ;
 ; LessThan1~0           ; 2       ;
+<<<<<<< Updated upstream
 ; blue_out~33           ; 2       ;
 ; blue_out~29           ; 2       ;
 ; blue_out~26           ; 2       ;
@@ -1594,6 +1836,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; process_1~10          ; 2       ;
 ; process_1~4           ; 2       ;
 ; LessThan4~0           ; 2       ;
+=======
+; blue_out~25           ; 2       ;
+; blue_out~23           ; 2       ;
+; green_out~5           ; 2       ;
+; red_out~48            ; 2       ;
+; red_out~47            ; 2       ;
+; red_out~43            ; 2       ;
+; process_1~49          ; 2       ;
+; blue_out[7]~16        ; 2       ;
+; red_out~39            ; 2       ;
+; red_out~34            ; 2       ;
+; red_out~30            ; 2       ;
+; bricks4[1]            ; 2       ;
+; red_out~29            ; 2       ;
+; blue_out[5]~11        ; 2       ;
+; red_out~17            ; 2       ;
+; process_1~45          ; 2       ;
+; process_1~44          ; 2       ;
+; process_1~36          ; 2       ;
+; process_1~34          ; 2       ;
+; process_1~31          ; 2       ;
+; red_out~14            ; 2       ;
+; process_1~26          ; 2       ;
+; process_1~25          ; 2       ;
+; process_1~24          ; 2       ;
+; LessThan13~0          ; 2       ;
+; process_1~18          ; 2       ;
+; LessThan2~2           ; 2       ;
+; process_1~10          ; 2       ;
+; LessThan5~0           ; 2       ;
+; LessThan2~0           ; 2       ;
+; LessThan4~1           ; 2       ;
+>>>>>>> Stashed changes
 ; LessThan29~0          ; 2       ;
 ; y[0]                  ; 2       ;
 ; clk25                 ; 2       ;
@@ -1608,6 +1883,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; paddlePos[5]~1        ; 1       ;
 ; paddlePos[8]~0        ; 1       ;
 ; clk25~0               ; 1       ;
+<<<<<<< Updated upstream
 ; blue_out~44           ; 1       ;
 ; blue_out~43           ; 1       ;
 ; red_out~215           ; 1       ;
@@ -1648,6 +1924,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; blue_out~40           ; 1       ;
 ; red_out[3]~207        ; 1       ;
 ; red_out~206           ; 1       ;
+=======
+; blue_out~34           ; 1       ;
+; blue_out~33           ; 1       ;
+; red_out~56            ; 1       ;
+; blue_out~32           ; 1       ;
+; green_out~10          ; 1       ;
+; red_out~55            ; 1       ;
+; red_out~52            ; 1       ;
+; blue_out[5]~30        ; 1       ;
+; red_out~51            ; 1       ;
+; process_1~56          ; 1       ;
+; red_out~50            ; 1       ;
+>>>>>>> Stashed changes
 ; prescaler~2           ; 1       ;
 ; prescaler~1           ; 1       ;
 ; prescaler~0           ; 1       ;
@@ -1699,6 +1988,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; horizontal_counter~0  ; 1       ;
 ; Equal1~1              ; 1       ;
 ; Equal1~0              ; 1       ;
+<<<<<<< Updated upstream
 ; bricks2[0]~17         ; 1       ;
 ; bricks1[0]~17         ; 1       ;
 ; bricks1[8]~15         ; 1       ;
@@ -1857,6 +2147,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LessThan56~0          ; 1       ;
 ; LessThan67~1          ; 1       ;
 ; LessThan67~0          ; 1       ;
+=======
+; bricks4[1]~6          ; 1       ;
+; bricks4[1]~5          ; 1       ;
+; bricks4[1]~4          ; 1       ;
+; bricks4[1]~3          ; 1       ;
+; bricks4[1]~2          ; 1       ;
+; bricks4[1]~1          ; 1       ;
+; LessThan51~1          ; 1       ;
+; LessThan51~0          ; 1       ;
+; ballPosX~28           ; 1       ;
+; ballPosX~26           ; 1       ;
+; ballPosX~25           ; 1       ;
+>>>>>>> Stashed changes
 ; ballPosX~24           ; 1       ;
 ; ballPosX~23           ; 1       ;
 ; ballPosX~22           ; 1       ;
@@ -1878,6 +2181,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ballPosX~6            ; 1       ;
 ; LessThan47~1          ; 1       ;
 ; LessThan47~0          ; 1       ;
+<<<<<<< Updated upstream
 ; LessThan46~1          ; 1       ;
 ; LessThan46~0          ; 1       ;
 ; ballPosX~3            ; 1       ;
@@ -2046,16 +2350,72 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LessThan28~0          ; 1       ;
 ; process_1~44          ; 1       ;
 ; red_out~34            ; 1       ;
+=======
+; ballPosX[2]~9         ; 1       ;
+; LessThan46~0          ; 1       ;
+; ballPosX[2]~6         ; 1       ;
+; ballPosX~5            ; 1       ;
+; ballPosX~4            ; 1       ;
+; LessThan49~0          ; 1       ;
+; ballPosX[2]~2         ; 1       ;
+; LessThan48~1          ; 1       ;
+; LessThan48~0          ; 1       ;
+; process_1~54          ; 1       ;
+; process_1~53          ; 1       ;
+; process_1~52          ; 1       ;
+; process_1~51          ; 1       ;
+; process_1~50          ; 1       ;
+; blue_out~29           ; 1       ;
+; blue_out~28           ; 1       ;
+; blue_out~27           ; 1       ;
+; blue_out~26           ; 1       ;
+; blue_out~22           ; 1       ;
+; green_out~9           ; 1       ;
+; green_out~8           ; 1       ;
+; green_out~7           ; 1       ;
+; green_out~6           ; 1       ;
+; green_out~4           ; 1       ;
+; green_out~3           ; 1       ;
+; red_out~49            ; 1       ;
+; red_out~46            ; 1       ;
+; red_out~45            ; 1       ;
+; red_out~44            ; 1       ;
+; red_out~42            ; 1       ;
+; blue_out~20           ; 1       ;
+; process_1~48          ; 1       ;
+; blue_out~19           ; 1       ;
+; blue_out[7]~17        ; 1       ;
+; red_out~41            ; 1       ;
+; red_out~40            ; 1       ;
+; red_out~38            ; 1       ;
+; red_out~36            ; 1       ;
+; blue_out[5]~14        ; 1       ;
+; LessThan30~0          ; 1       ;
+; LessThan31~0          ; 1       ;
+; red_out~27            ; 1       ;
+; red_out~26            ; 1       ;
+; red_out~25            ; 1       ;
+; red_out~22            ; 1       ;
+; red_out~21            ; 1       ;
+; red_out~20            ; 1       ;
+; red_out~19            ; 1       ;
+; red_out~18            ; 1       ;
+; red_out~16            ; 1       ;
+; process_1~43          ; 1       ;
+>>>>>>> Stashed changes
 ; process_1~41          ; 1       ;
-; process_1~39          ; 1       ;
+; process_1~40          ; 1       ;
 ; process_1~38          ; 1       ;
+<<<<<<< Updated upstream
 ; LessThan30~0          ; 1       ;
 ; LessThan31~0          ; 1       ;
 ; LessThan32~0          ; 1       ;
+=======
+>>>>>>> Stashed changes
 ; process_1~35          ; 1       ;
-; process_1~34          ; 1       ;
 ; process_1~33          ; 1       ;
 ; process_1~32          ; 1       ;
+<<<<<<< Updated upstream
 ; red_out~29            ; 1       ;
 ; process_1~27          ; 1       ;
 ; process_1~26          ; 1       ;
@@ -2069,6 +2429,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; process_1~8           ; 1       ;
 ; process_1~6           ; 1       ;
 ; process_1~5           ; 1       ;
+=======
+; process_1~28          ; 1       ;
+; process_1~27          ; 1       ;
+; process_1~23          ; 1       ;
+; process_1~21          ; 1       ;
+; process_1~20          ; 1       ;
+; process_1~17          ; 1       ;
+; process_1~16          ; 1       ;
+; process_1~13          ; 1       ;
+; LessThan28~0          ; 1       ;
+; LessThan2~3           ; 1       ;
+; process_1~11          ; 1       ;
+; LessThan3~0           ; 1       ;
+; process_1~9           ; 1       ;
+; process_1~8           ; 1       ;
+; LessThan5~1           ; 1       ;
+; process_1~7           ; 1       ;
+; process_1~5           ; 1       ;
+; process_1~4           ; 1       ;
+>>>>>>> Stashed changes
 ; process_1~2           ; 1       ;
 ; vs_out~reg0           ; 1       ;
 ; hs_out~reg0           ; 1       ;
@@ -2198,6 +2578,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add8~22               ; 1       ;
 ; Add8~21               ; 1       ;
 ; Add8~20               ; 1       ;
+<<<<<<< Updated upstream
 ; Add13~18              ; 1       ;
 ; Add13~17              ; 1       ;
 ; Add13~16              ; 1       ;
@@ -2208,6 +2589,221 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add13~11              ; 1       ;
 ; Add13~10              ; 1       ;
 ; Add13~9               ; 1       ;
+=======
+; Add12~14              ; 1       ;
+; Add12~13              ; 1       ;
+; Add12~12              ; 1       ;
+; Add12~11              ; 1       ;
+; Add12~10              ; 1       ;
+; Add12~9               ; 1       ;
+; Add12~8               ; 1       ;
+; Add12~7               ; 1       ;
+; Add12~6               ; 1       ;
+; Add12~5               ; 1       ;
+; Add12~4               ; 1       ;
+; Add12~3               ; 1       ;
+; Add12~2               ; 1       ;
+; Add12~1               ; 1       ;
+; Add12~0               ; 1       ;
+; Add8~18               ; 1       ;
+; Add8~17               ; 1       ;
+; Add8~16               ; 1       ;
+; Add8~15               ; 1       ;
+; Add8~14               ; 1       ;
+; Add8~13               ; 1       ;
+; Add8~12               ; 1       ;
+; Add8~11               ; 1       ;
+; Add8~10               ; 1       ;
+; Add8~9                ; 1       ;
+; Add8~8                ; 1       ;
+; Add8~7                ; 1       ;
+; Add8~6                ; 1       ;
+; Add8~5                ; 1       ;
+; Add8~4                ; 1       ;
+; Add8~3                ; 1       ;
+; Add8~2                ; 1       ;
+; Add8~1                ; 1       ;
+; Add8~0                ; 1       ;
+; Add6~18               ; 1       ;
+; Add6~17               ; 1       ;
+; Add6~16               ; 1       ;
+; Add6~15               ; 1       ;
+; Add6~14               ; 1       ;
+; Add6~13               ; 1       ;
+; Add6~12               ; 1       ;
+; Add6~11               ; 1       ;
+; Add6~10               ; 1       ;
+; Add6~9                ; 1       ;
+; Add6~8                ; 1       ;
+; Add6~7                ; 1       ;
+; Add6~6                ; 1       ;
+; Add6~5                ; 1       ;
+; Add6~4                ; 1       ;
+; Add6~3                ; 1       ;
+; Add6~2                ; 1       ;
+; Add6~1                ; 1       ;
+; Add7~18               ; 1       ;
+; Add7~17               ; 1       ;
+; Add7~16               ; 1       ;
+; Add7~15               ; 1       ;
+; Add7~14               ; 1       ;
+; Add7~13               ; 1       ;
+; Add7~12               ; 1       ;
+; Add7~11               ; 1       ;
+; Add7~10               ; 1       ;
+; Add7~9                ; 1       ;
+; Add7~8                ; 1       ;
+; Add7~7                ; 1       ;
+; Add7~6                ; 1       ;
+; Add7~5                ; 1       ;
+; Add7~4                ; 1       ;
+; Add7~3                ; 1       ;
+; Add7~2                ; 1       ;
+; Add7~1                ; 1       ;
+; Add7~0                ; 1       ;
+; Add10~14              ; 1       ;
+; Add10~13              ; 1       ;
+; Add10~12              ; 1       ;
+; Add10~11              ; 1       ;
+; Add10~10              ; 1       ;
+; Add10~9               ; 1       ;
+; Add10~8               ; 1       ;
+; Add10~7               ; 1       ;
+; Add10~6               ; 1       ;
+; Add10~5               ; 1       ;
+; Add10~4               ; 1       ;
+; Add10~3               ; 1       ;
+; Add10~2               ; 1       ;
+; Add10~1               ; 1       ;
+; Add10~0               ; 1       ;
+; Add9~18               ; 1       ;
+; Add9~17               ; 1       ;
+; Add9~16               ; 1       ;
+; Add9~15               ; 1       ;
+; Add9~14               ; 1       ;
+; Add9~13               ; 1       ;
+; Add9~12               ; 1       ;
+; Add9~11               ; 1       ;
+; Add9~10               ; 1       ;
+; Add9~9                ; 1       ;
+; Add9~8                ; 1       ;
+; Add9~7                ; 1       ;
+; Add9~6                ; 1       ;
+; Add9~5                ; 1       ;
+; Add9~4                ; 1       ;
+; Add9~3                ; 1       ;
+; Add9~2                ; 1       ;
+; Add9~1                ; 1       ;
+; Add9~0                ; 1       ;
+; Add11~14              ; 1       ;
+; Add11~13              ; 1       ;
+; Add11~12              ; 1       ;
+; Add11~11              ; 1       ;
+; Add11~10              ; 1       ;
+; Add11~9               ; 1       ;
+; Add11~8               ; 1       ;
+; Add11~7               ; 1       ;
+; Add11~6               ; 1       ;
+; Add11~5               ; 1       ;
+; Add11~4               ; 1       ;
+; Add11~3               ; 1       ;
+; Add11~2               ; 1       ;
+; Add11~1               ; 1       ;
+; Add11~0               ; 1       ;
+; LessThan34~18         ; 1       ;
+; LessThan34~17         ; 1       ;
+; LessThan34~15         ; 1       ;
+; LessThan34~13         ; 1       ;
+; LessThan34~11         ; 1       ;
+; LessThan34~9          ; 1       ;
+; LessThan34~7          ; 1       ;
+; LessThan34~5          ; 1       ;
+; LessThan34~3          ; 1       ;
+; LessThan34~1          ; 1       ;
+; LessThan35~18         ; 1       ;
+; LessThan35~17         ; 1       ;
+; LessThan35~15         ; 1       ;
+; LessThan35~13         ; 1       ;
+; LessThan35~11         ; 1       ;
+; LessThan35~9          ; 1       ;
+; LessThan35~7          ; 1       ;
+; LessThan35~5          ; 1       ;
+; LessThan35~3          ; 1       ;
+; LessThan35~1          ; 1       ;
+; Add1~18               ; 1       ;
+; Add1~17               ; 1       ;
+; Add1~16               ; 1       ;
+; Add1~15               ; 1       ;
+; Add1~14               ; 1       ;
+; Add1~13               ; 1       ;
+; Add1~12               ; 1       ;
+; Add1~11               ; 1       ;
+; Add1~10               ; 1       ;
+; Add1~9                ; 1       ;
+; Add1~8                ; 1       ;
+; Add1~7                ; 1       ;
+; Add1~6                ; 1       ;
+; Add1~5                ; 1       ;
+; Add1~4                ; 1       ;
+; Add1~3                ; 1       ;
+; Add1~2                ; 1       ;
+; Add1~1                ; 1       ;
+; Add1~0                ; 1       ;
+; LessThan39~18         ; 1       ;
+; LessThan39~17         ; 1       ;
+; LessThan39~15         ; 1       ;
+; LessThan39~13         ; 1       ;
+; LessThan39~11         ; 1       ;
+; LessThan39~9          ; 1       ;
+; LessThan39~7          ; 1       ;
+; LessThan39~5          ; 1       ;
+; LessThan39~3          ; 1       ;
+; LessThan39~1          ; 1       ;
+; Add2~15               ; 1       ;
+; Add2~13               ; 1       ;
+; Add2~11               ; 1       ;
+; Add2~9                ; 1       ;
+; Add2~7                ; 1       ;
+; Add2~5                ; 1       ;
+; Add2~3                ; 1       ;
+; Add2~2                ; 1       ;
+; Add2~1                ; 1       ;
+; Add2~0                ; 1       ;
+; LessThan41~14         ; 1       ;
+; LessThan41~13         ; 1       ;
+; LessThan41~11         ; 1       ;
+; LessThan41~9          ; 1       ;
+; LessThan41~7          ; 1       ;
+; LessThan41~5          ; 1       ;
+; LessThan41~3          ; 1       ;
+; LessThan41~1          ; 1       ;
+; Add3~13               ; 1       ;
+; Add3~11               ; 1       ;
+; Add3~9                ; 1       ;
+; Add3~7                ; 1       ;
+; Add3~5                ; 1       ;
+; Add3~3                ; 1       ;
+; Add3~1                ; 1       ;
+; LessThan40~16         ; 1       ;
+; LessThan40~15         ; 1       ;
+; LessThan40~13         ; 1       ;
+; LessThan40~11         ; 1       ;
+; LessThan40~9          ; 1       ;
+; LessThan40~7          ; 1       ;
+; LessThan40~5          ; 1       ;
+; LessThan40~3          ; 1       ;
+; LessThan40~1          ; 1       ;
+; LessThan38~18         ; 1       ;
+; LessThan38~17         ; 1       ;
+; LessThan38~15         ; 1       ;
+; LessThan38~13         ; 1       ;
+; LessThan38~11         ; 1       ;
+; LessThan38~9          ; 1       ;
+; LessThan38~7          ; 1       ;
+; LessThan38~5          ; 1       ;
+; LessThan38~3          ; 1       ;
+; LessThan38~1          ; 1       ;
+>>>>>>> Stashed changes
 +-----------------------+---------+
 
 
@@ -2216,6 +2812,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
+<<<<<<< Updated upstream
 ; Block interconnects         ; 1,419 / 94,460 ( 2 % ) ;
 ; C16 interconnects           ; 2 / 3,315 ( < 1 % )    ;
 ; C4 interconnects            ; 696 / 60,840 ( 1 % )   ;
@@ -2224,12 +2821,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Local interconnects         ; 585 / 33,216 ( 2 % )   ;
 ; R24 interconnects           ; 10 / 3,091 ( < 1 % )   ;
 ; R4 interconnects            ; 776 / 81,294 ( < 1 % ) ;
+=======
+; Block interconnects         ; 589 / 94,460 ( < 1 % ) ;
+; C16 interconnects           ; 6 / 3,315 ( < 1 % )    ;
+; C4 interconnects            ; 300 / 60,840 ( < 1 % ) ;
+; Direct links                ; 181 / 94,460 ( < 1 % ) ;
+; Global clocks               ; 3 / 16 ( 19 % )        ;
+; Local interconnects         ; 232 / 33,216 ( < 1 % ) ;
+; R24 interconnects           ; 14 / 3,091 ( < 1 % )   ;
+; R4 interconnects            ; 328 / 81,294 ( < 1 % ) ;
+>>>>>>> Stashed changes
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
+<<<<<<< Updated upstream
 ; Number of Logic Elements  (Average = 13.25) ; Number of LABs  (Total = 76) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 2                            ;
@@ -2248,23 +2856,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 14                                          ; 6                            ;
 ; 15                                          ; 8                            ;
 ; 16                                          ; 36                           ;
+=======
+; Number of Logic Elements  (Average = 13.42) ; Number of LABs  (Total = 33) ;
++---------------------------------------------+------------------------------+
+; 1                                           ; 3                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 3                            ;
+; 14                                          ; 3                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 19                           ;
+>>>>>>> Stashed changes
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
+<<<<<<< Updated upstream
 ; LAB-wide Signals  (Average = 0.62) ; Number of LABs  (Total = 76) ;
 +------------------------------------+------------------------------+
 ; 1 Clock                            ; 36                           ;
 ; 1 Clock enable                     ; 10                           ;
 ; 2 Clocks                           ; 1                            ;
+=======
+; LAB-wide Signals  (Average = 1.06) ; Number of LABs  (Total = 33) ;
++------------------------------------+------------------------------+
+; 1 Clock                            ; 24                           ;
+; 1 Clock enable                     ; 9                            ;
+; 2 Clock enables                    ; 2                            ;
+>>>>>>> Stashed changes
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
+<<<<<<< Updated upstream
 ; Number of Signals Sourced  (Average = 14.68) ; Number of LABs  (Total = 76) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
@@ -2296,12 +2933,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 26                                           ; 1                            ;
 ; 27                                           ; 1                            ;
 ; 28                                           ; 1                            ;
+=======
+; Number of Signals Sourced  (Average = 15.55) ; Number of LABs  (Total = 33) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 2                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 2                            ;
+; 9                                            ; 2                            ;
+; 10                                           ; 2                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 2                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 3                            ;
+; 24                                           ; 3                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 2                            ;
+>>>>>>> Stashed changes
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
+<<<<<<< Updated upstream
 ; Number of Signals Sourced Out  (Average = 7.07) ; Number of LABs  (Total = 76) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
@@ -2322,17 +2992,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 15                                              ; 0                            ;
 ; 16                                              ; 0                            ;
 ; 17                                              ; 3                            ;
+=======
+; Number of Signals Sourced Out  (Average = 8.12) ; Number of LABs  (Total = 33) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 2                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 4                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 1                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 2                            ;
+; 11                                              ; 6                            ;
+; 12                                              ; 2                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 1                            ;
+; 16                                              ; 3                            ;
+>>>>>>> Stashed changes
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
+<<<<<<< Updated upstream
 ; Number of Distinct Inputs  (Average = 16.59) ; Number of LABs  (Total = 76) ;
+=======
+; Number of Distinct Inputs  (Average = 15.27) ; Number of LABs  (Total = 33) ;
+>>>>>>> Stashed changes
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 1                            ;
 ; 2                                            ; 0                            ;
+<<<<<<< Updated upstream
 ; 3                                            ; 4                            ;
 ; 4                                            ; 2                            ;
 ; 5                                            ; 0                            ;
@@ -2361,6 +3057,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 28                                           ; 1                            ;
 ; 29                                           ; 2                            ;
 ; 30                                           ; 4                            ;
+=======
+; 3                                            ; 1                            ;
+; 4                                            ; 3                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 2                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 1                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 2                            ;
+>>>>>>> Stashed changes
 ; 31                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
@@ -2427,19 +3153,28 @@ Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
+<<<<<<< Updated upstream
     Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X22_Y24 to location X32_Y36
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (11888): Total time spent on timing analysis during the Fitter is 0.67 seconds.
+=======
+    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X33_Y24 to location X43_Y36
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Info (11888): Total time spent on timing analysis during the Fitter is 0.91 seconds.
+>>>>>>> Stashed changes
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 35 output pins without output pin load capacitance assignment
+    Info (306007): Pin "clk25_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "red_out[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "red_out[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "red_out[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2471,26 +3206,32 @@ Warning (306006): Found 35 output pins without output pin load capacitance assig
     Info (306007): Pin "blue_out[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "blue_out[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "hs_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "clk25_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "vs_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "sync" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "blank" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "vs_out" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file C:/altera/13.0sp1/Projects/BallAndBricks/output_files/BallAndBricks.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/Nitoy/Desktop/BallAndBricks/output_files/BallAndBricks.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
+<<<<<<< Updated upstream
     Info: Peak virtual memory: 4973 megabytes
     Info: Processing ended: Fri Apr 30 15:33:38 2021
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
+=======
+    Info: Peak virtual memory: 4968 megabytes
+    Info: Processing ended: Fri Apr 30 15:05:08 2021
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:13
+>>>>>>> Stashed changes
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/altera/13.0sp1/Projects/BallAndBricks/output_files/BallAndBricks.fit.smsg.
+The suppressed messages can be found in C:/Users/Nitoy/Desktop/BallAndBricks/output_files/BallAndBricks.fit.smsg.
 
 
