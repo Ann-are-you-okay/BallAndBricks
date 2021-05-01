@@ -19,7 +19,13 @@ ENTITY BallAndBricks IS
 
 		leftBtn : IN STD_LOGIC;
 		rightBtn : IN STD_LOGIC;
-		fireBtn : IN STD_LOGIC
+		fireBtn : IN STD_LOGIC;
+		newgame : IN STD_LOGIC;
+
+		mode1 : IN STD_LOGIC; --2 paddles
+		mode1 : IN STD_LOGIC; --Faster Ball
+		mode1 : IN STD_LOGIC; --Faster Paddle
+		mode1 : IN STD_LOGIC --switch Left and Right buttons
 	);
 END BallAndBricks;
 ARCHITECTURE Design OF BallAndBricks IS
@@ -30,19 +36,14 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL y : STD_LOGIC_VECTOR (9 DOWNTO 0) := "0000000000";
 	SIGNAL writeEnable : STD_LOGIC;
 	SIGNAL prescaler : STD_LOGIC_VECTOR (19 DOWNTO 0);
-	SIGNAL gameClock : STD_LOGIC;--------------------------------(?)-Ann
+	SIGNAL gameClock : STD_LOGIC;
 
-	SIGNAL paddlePos : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
+	SIGNAL paddlePosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
 	SIGNAL ballPosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
 	SIGNAL ballPosY : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
 
-<<<<<<< Updated upstream
-	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "010";
-	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "011";
-=======
 	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; --org: 001
 	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; --org: 100
->>>>>>> Stashed changes
 	SIGNAL ballDirX : STD_LOGIC := '1';
 	SIGNAL ballDirY : STD_LOGIC := '1';
 	SIGNAL ballAttached : STD_LOGIC := '1';
@@ -189,7 +190,7 @@ BEGIN
 			END LOOP;
 
 			-- Draw the paddle
-			IF ((writeEnable = '1') AND (x >= paddlePos) AND (x < paddlePos + paddleWidth) AND (Y >= paddlePosY) AND (Y < paddlePosY + paddleHeight))
+			IF ((writeEnable = '1') AND (x >= paddlePosX) AND (x < paddlePosX + paddleWidth) AND (Y >= paddlePosY) AND (Y < paddlePosY + paddleHeight))
 				THEN
 				red_out <= "1111111111";
 				green_out <= "1111111111";
@@ -245,9 +246,9 @@ BEGIN
 			-- If the left button was pressed
 			IF (leftBtn = '0') THEN
 				-- and if the paddle can move more left
-				IF ((paddlePos - 5) >= leftBound) THEN
+				IF ((paddlePosX - 5) >= leftBound) THEN
 					-- Move the paddle left
-					paddlePos <= paddlePos - 5;
+					paddlePosX <= paddlePosX - 5;
 					-- Move the ball left w/ the paddle if it is attached
 					IF (ballAttached = '1') THEN
 						ballPosX <= ballPosX - 5;
@@ -257,9 +258,9 @@ BEGIN
 			-- If the right button was pressed
 			ELSIF (rightBtn = '0') THEN
 				-- and if the paddle can move more right
-				IF ((paddlePos + 5) < rightBound - paddleWidth) THEN
+				IF ((paddlePosX + 5) < rightBound - paddleWidth) THEN
 					-- Move the paddle right
-					paddlePos <= paddlePos + 5;
+					paddlePosX <= paddlePosX + 5;
 					-- Move the ball right w/ the paddle if it is attached
 					IF (ballAttached = '1') THEN
 						ballPosX <= ballPosX + 5;
@@ -304,13 +305,19 @@ BEGIN
 					ballDirY <= NOT ballDirY;
 					ballPosY <= ballPosY + ballDy;
 				END IF;
-				-- bounce off bottom wall
+				-- Ball returns to rest on paddle
 				IF (ballPosY + ballSize >= bottomBound) THEN
-					ballDirY <= NOT ballDirY;
-					ballPosY <= ballPosY - ballDy;
+					ballAttached <= '1';
+					ballPosX <= paddlePosX + paddleWidth/2;
+					ballPosY <= "0110011010"; --410 = (paddlePosY - ballSize/2)
 				END IF;
-
-<<<<<<< Updated upstream
+				
+				-- bounce off bottom wall
+				--IF (ballPosY + ballSize >= bottomBound) THEN
+				--	ballDirY <= NOT ballDirY;
+				--	ballPosY <= ballPosY - ballDy;
+				--END IF;
+				
 				-- First row
 				FOR i IN 0 TO 8 LOOP
 					-- Collision on bottom of brick
@@ -391,16 +398,13 @@ BEGIN
 						bricks5(i) <= '0';
 					END IF;
 				END LOOP;
-=======
-				--
-				IF ((ballPosX >= (leftBound + 10) + (brickWidth + 10)) AND (ballPosX < (leftBound + 10 + brickWidth) + (brickWidth + 10))
-					AND (ballPosY >= 1 * (topBound + 10)) AND (ballPosY < 1 * (topBound + 10) + brickHeight))
-					THEN
-					bricks4 <= bricks4 NAND "10000000";
+
+				--Collision wtih paddle
+				IF (((ballPosY+ballSize) >= paddlePosY) AND ((ballPosX + ballSize/2) >= paddlePosX) AND ((ballPosX + ballSize/2) <= paddlePosX+paddleWidth)) THEN
+					ballDirY <= NOT ballDirY;
+					ballPosY <= ballPosY - ballDy;
 				END IF;
 
-
->>>>>>> Stashed changes
 			END IF;
 		END IF;
 	END PROCESS;

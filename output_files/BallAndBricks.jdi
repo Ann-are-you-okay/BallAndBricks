@@ -1,10 +1,6 @@
 <sld_project_info>
   <project>
-<<<<<<< Updated upstream
-    <hash md5_digest_80b="a438b6cd116aa0c388e0"/>
-=======
-    <hash md5_digest_80b="af696ecb52b000701e71"/>
->>>>>>> Stashed changes
+    <hash md5_digest_80b="6458352bd540093a8550"/>
   </project>
   <file_info>
     <file device="EP2C35F672C6" path="BallAndBricks.sof" usercode="0xFFFFFFFF"/>

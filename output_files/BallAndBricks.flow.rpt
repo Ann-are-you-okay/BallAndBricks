@@ -1,9 +1,5 @@
 Flow report for BallAndBricks
-<<<<<<< Updated upstream
-Fri Apr 30 15:33:42 2021
-=======
-Fri Apr 30 15:05:16 2021
->>>>>>> Stashed changes
+Fri Apr 30 23:53:20 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -44,28 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-<<<<<<< Updated upstream
-; Flow Status                        ; Successful - Fri Apr 30 15:33:41 2021            ;
-=======
-; Flow Status                        ; Successful - Fri Apr 30 15:05:12 2021            ;
->>>>>>> Stashed changes
+; Flow Status                        ; Successful - Fri Apr 30 23:53:17 2021            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; BallAndBricks                                    ;
 ; Top-level Entity Name              ; BallAndBricks                                    ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C35F672C6                                     ;
 ; Timing Models                      ; Final                                            ;
-<<<<<<< Updated upstream
-; Total logic elements               ; 1,007 / 33,216 ( 3 % )                           ;
-;     Total combinational functions  ; 999 / 33,216 ( 3 % )                             ;
-;     Dedicated logic registers      ; 173 / 33,216 ( < 1 % )                           ;
-; Total registers                    ; 173                                              ;
-=======
-; Total logic elements               ; 443 / 33,216 ( 1 % )                             ;
-;     Total combinational functions  ; 435 / 33,216 ( 1 % )                             ;
-;     Dedicated logic registers      ; 126 / 33,216 ( < 1 % )                           ;
-; Total registers                    ; 126                                              ;
->>>>>>> Stashed changes
+; Total logic elements               ; 1,039 / 33,216 ( 3 % )                           ;
+;     Total combinational functions  ; 1,032 / 33,216 ( 3 % )                           ;
+;     Dedicated logic registers      ; 170 / 33,216 ( < 1 % )                           ;
+; Total registers                    ; 170                                              ;
 ; Total pins                         ; 39 / 475 ( 8 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                              ;
@@ -79,37 +64,18 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< Updated upstream
-; Start date & time ; 04/30/2021 15:33:25 ;
-=======
-; Start date & time ; 04/30/2021 15:04:50 ;
->>>>>>> Stashed changes
+; Start date & time ; 04/30/2021 23:52:55 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BallAndBricks       ;
 +-------------------+---------------------+
 
 
-<<<<<<< Updated upstream
-+-----------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 90520732545404.161982200525936 ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --          ; --         ;
-+-------------------------------------+--------------------------------+---------------+-------------+------------+
-=======
 +------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                 ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 264355435313632.161982028903448 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 264355435313632.161985197508916 ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top        ;
@@ -117,7 +83,6 @@ applicable agreement for further details.
 ; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --         ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
->>>>>>> Stashed changes
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -125,19 +90,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< Updated upstream
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4630 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 4973 MB             ; 00:00:08                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4565 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4578 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:15                           ;
-=======
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4638 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:13     ; 1.0                     ; 4968 MB             ; 00:00:12                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 4568 MB             ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4572 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:20                           ;
->>>>>>> Stashed changes
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4627 MB             ; 00:00:06                           ;
+; Fitter                    ; 00:00:12     ; 1.0                     ; 4971 MB             ; 00:00:11                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4564 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4577 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:20                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
