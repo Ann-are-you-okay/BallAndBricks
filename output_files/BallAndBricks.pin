@@ -310,7 +310,7 @@ red_out[3]                   : D9        : output : 3.3-V LVTTL       :         
 green_out[3]                 : D10       : output : 3.3-V LVTTL       :         : 3         : Y              
 green_out[7]                 : D11       : output : 3.3-V LVTTL       :         : 3         : Y              
 green_out[9]                 : D12       : output : 3.3-V LVTTL       :         : 3         : Y              
-mode2                        : D13       : input  : 3.3-V LVTTL       :         : 3         : N              
+GND+                         : D13       :        :                   :         : 3         :                
 GND*                         : D14       :        :                   :         : 4         :                
 GND*                         : D15       :        :                   :         : 4         :                
 GND*                         : D16       :        :                   :         : 4         :                
@@ -393,7 +393,7 @@ GND*                         : G14       :        :                   :         
 GND*                         : G15       :        :                   :         : 4         :                
 GND*                         : G16       :        :                   :         : 4         :                
 GND*                         : G17       :        :                   :         : 4         :                
-mode3                        : G18       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : G18       :        :                   :         : 4         :                
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
 GND*                         : G21       :        :                   :         : 5         :                
@@ -528,7 +528,7 @@ GND*                         : M19       :        :                   :         
 GND*                         : M20       :        :                   :         : 5         :                
 GND*                         : M21       :        :                   :         : 5         :                
 GND*                         : M22       :        :                   :         : 5         :                
-mode4                        : M23       : input  : 3.3-V LVTTL       :         : 5         : N              
+GND*                         : M23       :        :                   :         : 5         :                
 GND*                         : M24       :        :                   :         : 5         :                
 GND*                         : M25       :        :                   :         : 5         :                
 GND                          : M26       : gnd    :                   :         :           :                
@@ -616,7 +616,7 @@ GND*                         : T3        :        :                   :         
 GND*                         : T4        :        :                   :         : 1         :                
 GND                          : T5        : gnd    :                   :         :           :                
 GND*                         : T6        :        :                   :         : 1         :                
-GND*                         : T7        :        :                   :         : 1         :                
+mode5                        : T7        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : T8        :        :                   :         : 1         :                
 GND*                         : T9        :        :                   :         : 1         :                
 GND*                         : T10       :        :                   :         : 1         :                
@@ -638,8 +638,8 @@ GND*                         : T25       :        :                   :         
 VCCIO6                       : T26       : power  :                   : 3.3V    : 6         :                
 GND*                         : U1        :        :                   :         : 1         :                
 GND*                         : U2        :        :                   :         : 1         :                
-GND*                         : U3        :        :                   :         : 1         :                
-GND*                         : U4        :        :                   :         : 1         :                
+mode4                        : U3        : input  : 3.3-V LVTTL       :         : 1         : Y              
+mode3                        : U4        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : U5        :        :                   :         : 1         :                
 GND*                         : U6        :        :                   :         : 1         :                
 GND*                         : U7        :        :                   :         : 1         :                
@@ -662,7 +662,7 @@ GND*                         : U23       :        :                   :         
 GND*                         : U24       :        :                   :         : 6         :                
 GND*                         : U25       :        :                   :         : 6         :                
 GND*                         : U26       :        :                   :         : 6         :                
-GND*                         : V1        :        :                   :         : 1         :                
+mode2                        : V1        : input  : 3.3-V LVTTL       :         : 1         : Y              
 mode1                        : V2        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : V3        :        :                   :         : 1         :                
 GND*                         : V4        :        :                   :         : 1         :                

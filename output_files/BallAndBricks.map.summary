@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat May 01 10:35:59 2021
+Analysis & Synthesis Status : Successful - Sat May 01 12:32:02 2021
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : BallAndBricks
 Top-level Entity Name : BallAndBricks
 Family : Cyclone II
-Total logic elements : 1,103
-    Total combinational functions : 1,078
-    Dedicated logic registers : 179
-Total registers : 179
-Total pins : 44
+Total logic elements : 1,187
+    Total combinational functions : 1,158
+    Dedicated logic registers : 187
+Total registers : 187
+Total pins : 45
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -22,10 +22,11 @@ ENTITY BallAndBricks IS
 		fireBtn : IN STD_LOGIC;
 		newgame : IN STD_LOGIC;
 
-		mode1 : IN STD_LOGIC; --2 paddles
-		mode2 : IN STD_LOGIC; --Faster Ball
-		mode3 : IN STD_LOGIC; --Faster Paddle
-		mode4 : IN STD_LOGIC --switch Left and Right buttons
+		mode1 : IN STD_LOGIC; -- 2 paddles
+		mode2 : IN STD_LOGIC; -- tinier paddle
+		mode3 : IN STD_LOGIC; -- Faster Ball
+		mode4 : IN STD_LOGIC; -- Faster Paddle
+		mode5 : IN STD_LOGIC -- switch Left and Right buttons
 	);
 END BallAndBricks;
 ARCHITECTURE Design OF BallAndBricks IS
@@ -39,16 +40,15 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL gameClock : STD_LOGIC;
 
 	SIGNAL paddlePosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
+	SIGNAL paddlePosX2 : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
 	SIGNAL ballPosX : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0101000000";
 	SIGNAL ballPosY : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0110011010";
 	
 	SIGNAL paddleDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
-	SIGNAL paddleDx2 : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100";
-	SIGNAL paddlePosX2 : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0100100000";
 	SIGNAL paddleDirX2 : STD_LOGIC := '1';
 
-	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; --org: 001
-	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; --org: 100
+	SIGNAL ballDx : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; 
+	SIGNAL ballDy : STD_LOGIC_VECTOR(2 DOWNTO 0) := "100"; 
 	SIGNAL ballDirX : STD_LOGIC := '1';
 	SIGNAL ballDirY : STD_LOGIC := '1';
 	SIGNAL ballAttached : STD_LOGIC := '1';
@@ -58,13 +58,16 @@ ARCHITECTURE Design OF BallAndBricks IS
 	SIGNAL bricks4 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 	SIGNAL bricks5 : STD_LOGIC_VECTOR(0 TO 8) := "111111111";
 
+	-- Variable sizes 
+	SHARED VARIABLE paddleWidth : INTEGER := 75; -- is this the 'best' spot to put this declaration?
+
 	-- Constants for positions, sizes, etc
 	CONSTANT leftBound : INTEGER := 50;
 	CONSTANT rightBound : INTEGER := 600;
 	CONSTANT topBound : INTEGER := 20;
 	CONSTANT bottomBound : INTEGER := 460;
 
-	CONSTANT paddleWidth : INTEGER := 75;
+	--CONSTANT paddleWidth : INTEGER := 75;
 	CONSTANT paddleHeight : INTEGER := 10;
 	CONSTANT paddlePosY : INTEGER := 420;
 
@@ -72,18 +75,16 @@ ARCHITECTURE Design OF BallAndBricks IS
 	CONSTANT brickHeight : INTEGER := 20;
 	CONSTANT brickWidth : INTEGER := 50;
 
-	--CONSTANT paddleDx2 : INTEGER := 5;
-
 BEGIN
 	clk25_out <= clk25;
 	sync <= '0';
 	blank <= '1';
+	
 	-- Split the 50MHz clock into VGA clock and Game clock
 	PROCESS (clk50_in)
 	BEGIN
 		IF clk50_in'EVENT AND clk50_in = '1' THEN
 			prescaler <= prescaler + 1;
-
 			IF (prescaler = "11000000000000000000") THEN
 				gameClock <= '1';
 				prescaler <= "00000000000000000000";
@@ -204,7 +205,7 @@ BEGIN
 				blue_out <= "1111111111";
 			END IF;
 
-			--MODE1 Activated 
+			-- MODE1 Activated 
 			-- Draw the decoy paddle
 			IF ((writeEnable = '1') AND (mode1 = '1') AND (x >= paddlePosX2) AND (x < paddlePosX2 + paddleWidth) AND (Y >= paddlePosY) AND (Y < paddlePosY + paddleHeight))
 				THEN
@@ -259,56 +260,79 @@ BEGIN
 				ballAttached <= '0';
 			END IF;
 
-			-- If the left button was pressed
-			IF (leftBtn = '0') THEN
-				-- and if the paddle can move more left
-				IF ((paddlePosX - 5) >= leftBound) THEN
-					-- Move the paddle left
-					paddlePosX <= paddlePosX - 5;
-					-- Move the ball left w/ the paddle if it is attached
-					IF (ballAttached = '1') THEN
-						ballPosX <= ballPosX - 5;
-					END IF;
-				END IF;
-			
-			-- If the right button was pressed
-			ELSIF (rightBtn = '0') THEN
-				-- and if the paddle can move more right
-				IF ((paddlePosX + 5) < rightBound - paddleWidth) THEN
-					-- Move the paddle right
-					paddlePosX <= paddlePosX + 5;
-					-- Move the ball right w/ the paddle if it is attached
-					IF (ballAttached = '1') THEN
-						ballPosX <= ballPosX + 5;
-					END IF;
-				END IF;
-			END IF;
-
-			-- If Mode1 Activated
+						--MODE 1 Activated 
 			IF(mode1 = '1') THEN
-
 				-- Bounce off left wall
-				IF (paddlePosX2 <= leftBound) THEN
+				IF (paddlePosX2 - 10 <= leftBound) THEN
 					paddleDirX2 <= '1';
 				END IF;
 				-- Bounce off right wall
-				IF (paddlePosX2 + paddleWidth >= rightBound) THEN
+				IF (paddlePosX2 + paddleWidth + 10 >= rightBound) THEN
 					paddleDirX2 <= '0';
 				END IF;
 
 				IF (paddleDirX2 = '1') THEN
 					-- Move the decoy paddle right
-					paddlePosX2 <= paddlePosX2 + paddleDx2;	
+					paddlePosX2 <= paddlePosX2 + paddleDx;	
 				ELSE
 					-- Move the decoy paddle left
-					paddlePosX2 <= paddlePosX2 - paddleDx2;
+					paddlePosX2 <= paddlePosX2 - paddleDx;
 				END IF;
 			END IF;
 			
+			-- MODE 2 Activated 
+			IF(mode2 = '1') THEN
+				paddleWidth := 30;
+			ELSE 
+				paddleWidth := 75;
+			END IF;
+
+			-- MODE 3 Activated 
+			IF(mode3 = '1') THEN
+				ballDx <= "111";
+				ballDy <= "111";
+			ELSE
+				ballDx <= "100";
+				ballDy <= "100";
+			END IF;
+
+			-- MODE 4 Activated 
+			IF(mode4 = '1') THEN
+				paddleDx <= "111";
+			ELSE
+				paddleDx <= "100";
+			END IF;
+
+			--MODE 5 Activated
+			------------------- to be continued
+
+			-- If the left button was pressed
+			IF (leftBtn = '0') THEN
+				-- and if the paddle can move more left
+				IF ((paddlePosX - 5) >= leftBound) THEN
+					-- Move the paddle left
+					paddlePosX <= paddlePosX - paddleDx;
+					-- Move the ball left w/ the paddle if it is attached
+					IF (ballAttached = '1') THEN
+						ballPosX <= ballPosX - paddleDx;
+					END IF;
+				END IF;
+			-- If the right button was pressed
+			ELSIF (rightBtn = '0') THEN
+				-- and if the paddle can move more right
+				IF ((paddlePosX + 5) < rightBound - paddleWidth) THEN
+					-- Move the paddle right
+					paddlePosX <= paddlePosX + paddleDx;
+					-- Move the ball right w/ the paddle if it is attached
+					IF (ballAttached = '1') THEN
+						ballPosX <= ballPosX + paddleDx;
+					END IF;
+				END IF;
+			END IF;
+
 			-- Ball movement
 			-- Only active when the ball isn't attached to the paddle
 			IF (ballAttached = '0') THEN
-
 				IF (ballDirX = '1') THEN
 					-- Move right by Dx
 					ballPosX <= ballPosX + ballDx;
@@ -317,7 +341,6 @@ BEGIN
 					ballPosX <= ballPosX - ballDx;
 				END IF;
 
-
 				IF (ballDirY = '1') THEN
 					-- Move up by Dy
 					ballPosY <= ballPosY - ballDy;
@@ -325,7 +348,6 @@ BEGIN
 					-- Move down by Dy
 					ballPosY <= ballPosY + ballDy;
 				END IF;
-
 
 				-- Bounce off left wall
 				IF (ballPosX <= leftBound) THEN
@@ -348,7 +370,6 @@ BEGIN
 					ballPosX <= paddlePosX + paddleWidth/2;
 					ballPosY <= "0110011010"; --410 = (paddlePosY - ballSize/2)
 				END IF;
-				
 				-- bounce off bottom wall
 				--IF (ballPosY + ballSize >= bottomBound) THEN
 				--	ballDirY <= NOT ballDirY;
@@ -436,7 +457,7 @@ BEGIN
 					END IF;
 				END LOOP;
 
-				--Collision wtih paddle
+				-- Collision wtih paddle
 				IF (((ballPosY+ballSize) >= paddlePosY) AND ((ballPosX + ballSize/2) >= paddlePosX) AND ((ballPosX + ballSize/2) <= paddlePosX+paddleWidth)) THEN
 					ballDirY <= NOT ballDirY;
 					ballPosY <= ballPosY - ballDy;
