@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BallAndBricks
-Fri Apr 30 23:53:01 2021
+Sat May 01 10:35:59 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -44,16 +44,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 30 23:53:01 2021            ;
+; Analysis & Synthesis Status        ; Successful - Sat May 01 10:35:59 2021            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; BallAndBricks                                    ;
 ; Top-level Entity Name              ; BallAndBricks                                    ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 1,057                                            ;
-;     Total combinational functions  ; 1,032                                            ;
-;     Dedicated logic registers      ; 170                                              ;
-; Total registers                    ; 170                                              ;
-; Total pins                         ; 39                                               ;
+; Total logic elements               ; 1,103                                            ;
+;     Total combinational functions  ; 1,078                                            ;
+;     Dedicated logic registers      ; 179                                              ;
+; Total registers                    ; 179                                              ;
+; Total pins                         ; 44                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0                                                ;
 ; Embedded Multiplier 9-bit elements ; 0                                                ;
@@ -171,28 +171,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,057     ;
+; Estimated Total logic elements              ; 1,103     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1032      ;
+; Total combinational functions               ; 1078      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 480       ;
-;     -- 3 input functions                    ; 235       ;
-;     -- <=2 input functions                  ; 317       ;
+;     -- 4 input functions                    ; 491       ;
+;     -- 3 input functions                    ; 250       ;
+;     -- <=2 input functions                  ; 337       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 739       ;
-;     -- arithmetic mode                      ; 293       ;
+;     -- normal mode                          ; 757       ;
+;     -- arithmetic mode                      ; 321       ;
 ;                                             ;           ;
-; Total registers                             ; 170       ;
-;     -- Dedicated logic registers            ; 170       ;
+; Total registers                             ; 179       ;
+;     -- Dedicated logic registers            ; 179       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 39        ;
+; I/O pins                                    ; 44        ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; gameClock ;
-; Maximum fan-out                             ; 76        ;
-; Total fan-out                               ; 3658      ;
-; Average fan-out                             ; 2.95      ;
+; Maximum fan-out                             ; 85        ;
+; Total fan-out                               ; 3811      ;
+; Average fan-out                             ; 2.93      ;
 +---------------------------------------------+-----------+
 
 
@@ -201,7 +201,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |BallAndBricks             ; 1032 (1032)       ; 170 (170)    ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |BallAndBricks      ; work         ;
+; |BallAndBricks             ; 1078 (1078)       ; 179 (179)    ; 0           ; 0            ; 0       ; 0         ; 44   ; 0            ; |BallAndBricks      ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -223,12 +223,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 170   ;
+; Total registers                              ; 179   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 2     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 49    ;
+; Number of registers using Clock Enable       ; 58    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -246,55 +246,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ballPosY[3]                             ; 10      ;
 ; paddlePosX[8]                           ; 7       ;
 ; paddlePosX[5]                           ; 7       ;
-; bricks5[8]                              ; 11      ;
+; paddlePosX2[8]                          ; 4       ;
+; paddlePosX2[5]                          ; 4       ;
+; bricks5[8]                              ; 10      ;
 ; bricks5[7]                              ; 12      ;
-; bricks5[6]                              ; 12      ;
-; bricks5[4]                              ; 13      ;
-; bricks5[5]                              ; 12      ;
+; bricks5[6]                              ; 13      ;
+; bricks5[4]                              ; 12      ;
 ; bricks5[2]                              ; 12      ;
-; bricks5[3]                              ; 10      ;
+; bricks5[3]                              ; 9       ;
 ; bricks5[1]                              ; 13      ;
 ; bricks5[0]                              ; 13      ;
 ; bricks4[7]                              ; 14      ;
-; bricks4[8]                              ; 15      ;
+; bricks4[8]                              ; 16      ;
 ; bricks4[6]                              ; 14      ;
-; bricks4[5]                              ; 13      ;
+; bricks4[5]                              ; 12      ;
 ; bricks4[4]                              ; 13      ;
-; bricks4[2]                              ; 12      ;
-; bricks4[1]                              ; 12      ;
 ; bricks4[3]                              ; 12      ;
-; bricks3[8]                              ; 13      ;
-; bricks4[0]                              ; 11      ;
-; bricks3[6]                              ; 11      ;
-; bricks3[7]                              ; 9       ;
-; bricks3[5]                              ; 12      ;
+; bricks4[1]                              ; 13      ;
+; bricks4[2]                              ; 12      ;
+; bricks3[8]                              ; 10      ;
+; bricks4[0]                              ; 8       ;
+; bricks3[6]                              ; 10      ;
+; bricks3[7]                              ; 8       ;
 ; bricks3[4]                              ; 11      ;
-; bricks3[3]                              ; 8       ;
+; bricks3[5]                              ; 12      ;
 ; bricks3[2]                              ; 11      ;
-; bricks3[1]                              ; 11      ;
-; bricks3[0]                              ; 6       ;
-; bricks2[5]                              ; 10      ;
-; bricks2[4]                              ; 9       ;
-; bricks2[3]                              ; 9       ;
+; bricks3[3]                              ; 7       ;
+; bricks3[0]                              ; 7       ;
+; bricks2[8]                              ; 9       ;
+; bricks2[6]                              ; 9       ;
+; bricks2[5]                              ; 9       ;
+; bricks2[3]                              ; 8       ;
 ; bricks2[2]                              ; 8       ;
 ; bricks2[1]                              ; 7       ;
-; bricks2[6]                              ; 9       ;
+; bricks2[4]                              ; 9       ;
 ; bricks2[7]                              ; 9       ;
-; bricks2[8]                              ; 10      ;
-; bricks1[3]                              ; 4       ;
-; bricks1[4]                              ; 4       ;
-; bricks1[1]                              ; 4       ;
+; bricks3[1]                              ; 10      ;
+; bricks5[5]                              ; 9       ;
 ; bricks1[2]                              ; 4       ;
 ; bricks1[7]                              ; 5       ;
+; bricks1[1]                              ; 4       ;
 ; bricks1[6]                              ; 4       ;
 ; bricks1[5]                              ; 4       ;
+; bricks1[3]                              ; 4       ;
+; bricks1[4]                              ; 4       ;
 ; bricks1[8]                              ; 4       ;
 ; bricks1[0]                              ; 3       ;
 ; bricks2[0]                              ; 5       ;
 ; ballAttached                            ; 70      ;
 ; ballDirX                                ; 2       ;
 ; ballDirY                                ; 2       ;
-; Total number of inverted registers = 56 ;         ;
+; paddleDirX2                             ; 8       ;
+; Total number of inverted registers = 59 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -307,11 +310,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |BallAndBricks|paddlePosX[7]       ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |BallAndBricks|ballPosX[1]         ;
 ; 12:1               ; 6 bits    ; 48 LEs        ; 18 LEs               ; 30 LEs                 ; Yes        ; |BallAndBricks|ballPosX[2]         ;
-; 22:1               ; 8 bits    ; 112 LEs       ; 64 LEs               ; 48 LEs                 ; Yes        ; |BallAndBricks|red_out[4]~reg0     ;
-; 31:1               ; 6 bits    ; 120 LEs       ; 84 LEs               ; 36 LEs                 ; Yes        ; |BallAndBricks|blue_out[2]~reg0    ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; Yes        ; |BallAndBricks|red_out[4]~reg0     ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 90 LEs               ; 36 LEs                 ; Yes        ; |BallAndBricks|blue_out[2]~reg0    ;
 ; 95:1               ; 4 bits    ; 252 LEs       ; 8 LEs                ; 244 LEs                ; Yes        ; |BallAndBricks|ballPosY[9]         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |BallAndBricks|paddlePosX[5]       ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; Yes        ; |BallAndBricks|ballPosX[6]         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |BallAndBricks|paddlePosX[8]       ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; Yes        ; |BallAndBricks|ballPosX[8]         ;
 ; 95:1               ; 4 bits    ; 252 LEs       ; 8 LEs                ; 244 LEs                ; Yes        ; |BallAndBricks|ballPosY[3]         ;
 ; 11:1               ; 2 bits    ; 14 LEs        ; 2 LEs                ; 12 LEs                 ; No         ; |BallAndBricks|red_out             ;
 ; 11:1               ; 5 bits    ; 35 LEs        ; 5 LEs                ; 30 LEs                 ; No         ; |BallAndBricks|red_out             ;
@@ -324,7 +327,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -334,29 +337,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Apr 30 23:52:54 2021
+    Info: Processing started: Sat May 01 10:35:54 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BallAndBricks -c BallAndBricks
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ballandbricks.vhd
     Info (12022): Found design unit 1: BallAndBricks-Design
     Info (12023): Found entity 1: BallAndBricks
 Info (12127): Elaborating entity "BallAndBricks" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at BallAndBricks.vhd(39): used explicit default value for signal "ballDx" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at BallAndBricks.vhd(40): used explicit default value for signal "ballDy" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at BallAndBricks.vhd(46): used explicit default value for signal "paddleDx2" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at BallAndBricks.vhd(50): used explicit default value for signal "ballDx" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at BallAndBricks.vhd(51): used explicit default value for signal "ballDy" because signal was never assigned a value
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sync" is stuck at GND
     Warning (13410): Pin "blank" is stuck at VCC
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1101 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "newgame"
+    Warning (15610): No output dependent on input pin "mode2"
+    Warning (15610): No output dependent on input pin "mode3"
+    Warning (15610): No output dependent on input pin "mode4"
+Info (21057): Implemented 1152 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 1062 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info (21061): Implemented 1108 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
     Info: Peak virtual memory: 4635 megabytes
-    Info: Processing ended: Fri Apr 30 23:53:01 2021
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Sat May 01 10:35:59 2021
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

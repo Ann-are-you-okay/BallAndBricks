@@ -284,7 +284,7 @@ red_out[4]                   : C9        : output : 3.3-V LVTTL       :         
 green_out[2]                 : C10       : output : 3.3-V LVTTL       :         : 3         : Y              
 blue_out[6]                  : C11       : output : 3.3-V LVTTL       :         : 3         : Y              
 blue_out[8]                  : C12       : output : 3.3-V LVTTL       :         : 3         : Y              
-GND+                         : C13       :        :                   :         : 3         :                
+newgame                      : C13       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND                          : C14       : gnd    :                   :         :           :                
 GND*                         : C15       :        :                   :         : 4         :                
 GND*                         : C16       :        :                   :         : 4         :                
@@ -310,7 +310,7 @@ red_out[3]                   : D9        : output : 3.3-V LVTTL       :         
 green_out[3]                 : D10       : output : 3.3-V LVTTL       :         : 3         : Y              
 green_out[7]                 : D11       : output : 3.3-V LVTTL       :         : 3         : Y              
 green_out[9]                 : D12       : output : 3.3-V LVTTL       :         : 3         : Y              
-GND+                         : D13       :        :                   :         : 3         :                
+mode2                        : D13       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : D14       :        :                   :         : 4         :                
 GND*                         : D15       :        :                   :         : 4         :                
 GND*                         : D16       :        :                   :         : 4         :                
@@ -393,7 +393,7 @@ GND*                         : G14       :        :                   :         
 GND*                         : G15       :        :                   :         : 4         :                
 GND*                         : G16       :        :                   :         : 4         :                
 GND*                         : G17       :        :                   :         : 4         :                
-GND*                         : G18       :        :                   :         : 4         :                
+mode3                        : G18       : input  : 3.3-V LVTTL       :         : 4         : N              
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
 GND*                         : G21       :        :                   :         : 5         :                
@@ -528,7 +528,7 @@ GND*                         : M19       :        :                   :         
 GND*                         : M20       :        :                   :         : 5         :                
 GND*                         : M21       :        :                   :         : 5         :                
 GND*                         : M22       :        :                   :         : 5         :                
-GND*                         : M23       :        :                   :         : 5         :                
+mode4                        : M23       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : M24       :        :                   :         : 5         :                
 GND*                         : M25       :        :                   :         : 5         :                
 GND                          : M26       : gnd    :                   :         :           :                
@@ -663,7 +663,7 @@ GND*                         : U24       :        :                   :         
 GND*                         : U25       :        :                   :         : 6         :                
 GND*                         : U26       :        :                   :         : 6         :                
 GND*                         : V1        :        :                   :         : 1         :                
-GND*                         : V2        :        :                   :         : 1         :                
+mode1                        : V2        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : V3        :        :                   :         : 1         :                
 GND*                         : V4        :        :                   :         : 1         :                
 GND*                         : V5        :        :                   :         : 1         :                
